@@ -1,0 +1,8 @@
+body {
+    background-image: url("../public/bg.png");
+    background-size: cover;
+}
+
+h4 {
+    color: #00BCD4;
+}

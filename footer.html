@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="css/footer.css">
+
+<footer class="modern-footer">
+    <div class="container">
+        <div class="row align-items-center py-4">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="footer-text mb-0">&copy; 2026 Xinxin Liu. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <div class="language-selector">
+                    <label for="languageSelect" class="me-2">
+                        <i class="fas fa-globe"></i> Idioma:
+                    </label>
+                    <select id="languageSelect" class="language-dropdown">
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Language selector functionality
+    document.getElementById('languageSelect').addEventListener('change', function() {
+        const selectedLang = this.value;
+        // Store the selected language in localStorage
+        localStorage.setItem('preferredLanguage', selectedLang);
+        
+        // You can add translation logic here
+        console.log('Language changed to:', selectedLang);
+        
+        // For now, just show an alert
+        const messages = {
+            es: 'Idioma cambiado a Español',
+            en: 'Language changed to English',
+            zh: '语言已更改为中文'
+        };
+        
+        // Show a subtle notification (you can enhance this later)
+        const notification = document.createElement('div');
+        notification.textContent = messages[selectedLang];
+        notification.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #6366f1; color: white; padding: 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; animation: slideIn 0.3s ease;';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }, 2000);
+    });
+    
+    // Load saved language preference
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang) {
+        document.getElementById('languageSelect').value = savedLang;
+    }
+</script>
+
+<style>
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+</style>

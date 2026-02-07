@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/tools.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     
     <title>Tools - Xinxin Liu</title>
 </head>
@@ -36,6 +38,46 @@
                     <h3 class="card-title mb-3">Número a letras</h3>
                     <p class="card-text">Convierte números a su representación en letras en español. Soporta números enteros y decimales.</p>
                     <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#numeroModal">Abrir herramienta</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow tool-card">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-3">Generador de Código QR</h3>
+                    <p class="card-text">Genera códigos QR personalizados a partir de texto, URLs o cualquier información.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#qrModal">Abrir herramienta</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow tool-card">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-3"></i>Generador de Paleta de Colores</h3>
+                    <p class="card-text">Genera paletas de colores armoniosas con códigos hexadecimales para tus proyectos.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#colorModal">Abrir herramienta</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow tool-card">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-3"></i>Conversor de Unidades</h3>
+                    <p class="card-text">Convierte entre diferentes unidades de longitud, peso y temperatura.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#unitModal">Abrir herramienta</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow tool-card">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-3">Contador de Palabras</h3>
+                    <p class="card-text">Cuenta palabras, caracteres, líneas y proporciona estadísticas de texto.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#wordModal">Abrir herramienta</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow tool-card">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-3">Formateador JSON</h3>
+                    <p class="card-text">Formatea, valida y embellece código JSON de manera rápida y sencilla.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#jsonModal">Abrir herramienta</button>
                 </div>
             </div>
         </div>
@@ -167,6 +209,371 @@
         document.getElementById('numeroForm').reset();
         document.getElementById('resultado').style.display = 'none';
     });
+</script>
+
+<!-- QR Code Modal -->
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="qrModalLabel">Generador de Código QR</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="qrForm" class="styled-form">
+                    <div class="mb-4">
+                        <label for="qrText">Texto o URL</label>
+                        <input type="text" id="qrText" placeholder="Ejemplo: https://tuwebsite.com" required>
+                    </div>
+                    <button type="submit" class="btn btn-convert">Generar QR</button>
+                </form>
+                <div id="qrcode" class="text-center mt-4" style="display: none;"></div>
+                <div class="text-center mt-3">
+                    <button id="downloadQR" class="btn btn-convert" style="display: none;">Descargar QR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Color Palette Modal -->
+<div class="modal fade" id="colorModal" tabindex="-1" aria-labelledby="colorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="colorModalLabel">Generador de Paleta de Colores</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <button id="generateColors" class="btn btn-convert mb-4">Generar Nueva Paleta</button>
+                <div id="colorPalette" class="row g-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Unit Converter Modal -->
+<div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="unitModalLabel">Conversor de Unidades</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="unitForm" class="styled-form">
+                    <div class="mb-4">
+                        <label for="unitType">Tipo de conversión</label>
+                        <select id="unitType" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
+                            <option value="length">Longitud</option>
+                            <option value="weight">Peso</option>
+                            <option value="temperature">Temperatura</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="unitFrom">De</label>
+                            <select id="unitFrom" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="unitTo">A</label>
+                            <select id="unitTo" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="unitValue">Valor</label>
+                        <input type="number" id="unitValue" step="any" placeholder="Ingresa el valor" required>
+                    </div>
+                </form>
+                <div id="unitResult" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Word Counter Modal -->
+<div class="modal fade" id="wordModal" tabindex="-1" aria-labelledby="wordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="wordModalLabel">Contador de Palabras</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="styled-form">
+                    <div class="mb-4">
+                        <label for="textInput">Texto</label>
+                        <textarea id="textInput" rows="8" placeholder="Escribe o pega tu texto aquí..." style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem; resize: vertical;"></textarea>
+                    </div>
+                </div>
+                <div id="wordStats"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JSON Formatter Modal -->
+<div class="modal fade" id="jsonModal" tabindex="-1" aria-labelledby="jsonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="jsonModalLabel">Formateador JSON</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="styled-form">
+                    <div class="mb-4">
+                        <label for="jsonInput">JSON sin formatear</label>
+                        <textarea id="jsonInput" rows="8" placeholder='{"ejemplo": "Pega tu JSON aquí"}' style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem; font-family: monospace; resize: vertical;"></textarea>
+                    </div>
+                    <div class="d-flex gap-2 mb-4">
+                        <button id="formatJSON" class="btn btn-convert flex-fill">Formatear</button>
+                        <button id="minifyJSON" class="btn btn-convert flex-fill">Minificar</button>
+                    </div>
+                </div>
+                <div id="jsonOutput" style="display: none;"></div>
+                <div id="jsonError" style="display: none; color: #dc3545; font-weight: 600; margin-top: 1rem;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// QR Code Generator
+document.getElementById('qrForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const text = document.getElementById('qrText').value;
+    const qrcodeDiv = document.getElementById('qrcode');
+    
+    qrcodeDiv.innerHTML = '';
+    qrcodeDiv.style.display = 'block';
+    
+    new QRCode(qrcodeDiv, {
+        text: text,
+        width: 256,
+        height: 256,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+    
+    document.getElementById('downloadQR').style.display = 'inline-block';
+});
+
+document.getElementById('downloadQR').addEventListener('click', function() {
+    const canvas = document.querySelector('#qrcode canvas');
+    const url = canvas.toDataURL('image/png');
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'qrcode.png';
+    a.click();
+});
+
+document.getElementById('qrModal').addEventListener('hidden.bs.modal', function() {
+    document.getElementById('qrForm').reset();
+    document.getElementById('qrcode').innerHTML = '';
+    document.getElementById('qrcode').style.display = 'none';
+    document.getElementById('downloadQR').style.display = 'none';
+});
+
+// Color Palette Generator
+function generateColor() {
+    return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+}
+
+function generatePalette() {
+    const palette = document.getElementById('colorPalette');
+    palette.innerHTML = '';
+    
+    for (let i = 0; i < 5; i++) {
+        const color = generateColor();
+        const col = document.createElement('div');
+        col.className = 'col';
+        col.innerHTML = `
+            <div class="color-box" style="background: ${color}; height: 120px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; position: relative;">
+                <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; color: #111827;">${color}</div>
+            </div>
+        `;
+        col.querySelector('.color-box').addEventListener('click', function() {
+            navigator.clipboard.writeText(color);
+            const box = this;
+            const originalHTML = box.innerHTML;
+            box.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><i class="fas fa-check me-2"></i>Copiado</div>`;
+            setTimeout(() => box.innerHTML = originalHTML, 1000);
+        });
+        palette.appendChild(col);
+    }
+}
+
+document.getElementById('generateColors').addEventListener('click', generatePalette);
+document.getElementById('colorModal').addEventListener('shown.bs.modal', function() {
+    if (document.getElementById('colorPalette').children.length === 0) {
+        generatePalette();
+    }
+});
+
+// Unit Converter
+const units = {
+    length: {
+        metros: 1,
+        kilómetros: 0.001,
+        centímetros: 100,
+        milímetros: 1000,
+        millas: 0.000621371,
+        pies: 3.28084,
+        pulgadas: 39.3701
+    },
+    weight: {
+        kilogramos: 1,
+        gramos: 1000,
+        miligramos: 1000000,
+        libras: 2.20462,
+        onzas: 35.274,
+        toneladas: 0.001
+    },
+    temperature: {
+        celsius: 'C',
+        fahrenheit: 'F',
+        kelvin: 'K'
+    }
+};
+
+function updateUnitSelects() {
+    const type = document.getElementById('unitType').value;
+    const fromSelect = document.getElementById('unitFrom');
+    const toSelect = document.getElementById('unitTo');
+    
+    fromSelect.innerHTML = '';
+    toSelect.innerHTML = '';
+    
+    Object.keys(units[type]).forEach(unit => {
+        fromSelect.innerHTML += `<option value="${unit}">${unit.charAt(0).toUpperCase() + unit.slice(1)}</option>`;
+        toSelect.innerHTML += `<option value="${unit}">${unit.charAt(0).toUpperCase() + unit.slice(1)}</option>`;
+    });
+    
+    if (toSelect.options.length > 1) toSelect.selectedIndex = 1;
+}
+
+function convertTemperature(value, from, to) {
+    let celsius;
+    if (from === 'celsius') celsius = value;
+    else if (from === 'fahrenheit') celsius = (value - 32) * 5/9;
+    else celsius = value - 273.15;
+    
+    if (to === 'celsius') return celsius;
+    else if (to === 'fahrenheit') return celsius * 9/5 + 32;
+    else return celsius + 273.15;
+}
+
+function convertUnit() {
+    const type = document.getElementById('unitType').value;
+    const from = document.getElementById('unitFrom').value;
+    const to = document.getElementById('unitTo').value;
+    const value = parseFloat(document.getElementById('unitValue').value);
+    
+    if (isNaN(value)) return;
+    
+    let result;
+    if (type === 'temperature') {
+        result = convertTemperature(value, from, to);
+    } else {
+        result = value * units[type][from] / units[type][to];
+    }
+    
+    const resultDiv = document.getElementById('unitResult');
+    resultDiv.innerHTML = `<strong>${value} ${from}</strong> = <strong>${result.toFixed(4)} ${to}</strong>`;
+    resultDiv.style.display = 'block';
+}
+
+document.getElementById('unitType').addEventListener('change', updateUnitSelects);
+document.getElementById('unitValue').addEventListener('input', convertUnit);
+document.getElementById('unitFrom').addEventListener('change', convertUnit);
+document.getElementById('unitTo').addEventListener('change', convertUnit);
+
+document.getElementById('unitModal').addEventListener('shown.bs.modal', function() {
+    updateUnitSelects();
+});
+
+// Word Counter
+document.getElementById('textInput').addEventListener('input', function() {
+    const text = this.value;
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    const chars = text.length;
+    const charsNoSpaces = text.replace(/\s/g, '').length;
+    const lines = text.split('\n').length;
+    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+    
+    document.getElementById('wordStats').innerHTML = `
+        <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border: 2px solid #d1d5db;">
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-3">
+                    <div style="font-size: 2rem; font-weight: 700; color: #6366f1;">${words}</div>
+                    <div style="color: #6b7280; font-size: 0.9rem;">Palabras</div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div style="font-size: 2rem; font-weight: 700; color: #6366f1;">${chars}</div>
+                    <div style="color: #6b7280; font-size: 0.9rem;">Caracteres</div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div style="font-size: 2rem; font-weight: 700; color: #6366f1;">${charsNoSpaces}</div>
+                    <div style="color: #6b7280; font-size: 0.9rem;">Sin espacios</div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div style="font-size: 2rem; font-weight: 700; color: #6366f1;">${lines}</div>
+                    <div style="color: #6b7280; font-size: 0.9rem;">Líneas</div>
+                </div>
+            </div>
+        </div>
+    `;
+});
+
+// JSON Formatter
+document.getElementById('formatJSON').addEventListener('click', function() {
+    const input = document.getElementById('jsonInput').value;
+    const output = document.getElementById('jsonOutput');
+    const error = document.getElementById('jsonError');
+    
+    try {
+        const parsed = JSON.parse(input);
+        const formatted = JSON.stringify(parsed, null, 2);
+        output.innerHTML = `<pre style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border: 2px solid #d1d5db; color: #111827; max-height: 400px; overflow: auto;">${formatted}</pre>`;
+        output.style.display = 'block';
+        error.style.display = 'none';
+    } catch (e) {
+        error.textContent = 'Error: JSON inválido - ' + e.message;
+        error.style.display = 'block';
+        output.style.display = 'none';
+    }
+});
+
+document.getElementById('minifyJSON').addEventListener('click', function() {
+    const input = document.getElementById('jsonInput').value;
+    const output = document.getElementById('jsonOutput');
+    const error = document.getElementById('jsonError');
+    
+    try {
+        const parsed = JSON.parse(input);
+        const minified = JSON.stringify(parsed);
+        output.innerHTML = `<pre style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border: 2px solid #d1d5db; color: #111827; max-height: 400px; overflow: auto; word-wrap: break-word;">${minified}</pre>`;
+        output.style.display = 'block';
+        error.style.display = 'none';
+    } catch (e) {
+        error.textContent = 'Error: JSON inválido - ' + e.message;
+        error.style.display = 'block';
+        output.style.display = 'none';
+    }
+});
+</script>
+
+<div id="footer-placeholder"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
 </script>
 </body>
 </html>

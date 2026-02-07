@@ -17,29 +17,14 @@
     <title>Liu</title>
 </head>
 <body class="bg-transparent">
-<nav class="navbar navbar-light bg-light">
-    <span></span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Página principal <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="cursos.html">Mis cursos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com/xxliu95">
-                    <img src="public/git.png" class="mr-2" style="height: 2em; width: 2em;" alt="">
-                    Github
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<div id="header-placeholder"></div>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+</script>
 <div style="margin: 2.5em;">
     <div class=" border border-light shadow bg-light" style="border-radius: 15px; padding: 1.5em">
         <div class="row">

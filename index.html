@@ -17,6 +17,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <script src="js/translations.js"></script>
+
     <title>Xinxin Liu - Portfolio</title>
 </head>
 <body class="bg-transparent">
@@ -28,6 +30,10 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             document.querySelectorAll('.nav-item')[0].classList.add('active');
+            // Trigger translations after header is loaded
+            if (typeof window.initTranslations === 'function') {
+                window.initTranslations();
+            }
         });
 </script>
 
@@ -40,7 +46,7 @@
             </div>
             <div class="col-lg-8">
                 <h1 class="hero-title">Xinxin Liu</h1>
-                <p class="hero-subtitle">Software Engineer | Full-Stack Developer</p>
+                <p class="hero-subtitle" data-translate="hero.subtitle">Software Engineer | Full-Stack Developer</p>
                 <div class="contact-info">
                     <a href="mailto:xxliu95@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> xxliu95@gmail.com</a>
                     <a href="https://github.com/xxliu95" class="contact-link" target="_blank"><i class="fab fa-github"></i> github.com/xxliu95</a>
@@ -55,8 +61,8 @@
 <section class="section">
     <div class="container">
         <div class="section-card">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-content">
+            <h2 class="section-title" data-translate="about.title">About Me</h2>
+            <p class="section-content" data-translate="about.content">
                 I am a software engineer with LTE and 5G development experience. I have a proven ability to quickly learn and adapt to new technologies.
                 Graduating in the top 10% of my class, I excel in agile team collaboration, technical leadership, and high-quality project delivery. My
                 strong communication skills enable me to bridge teams between China and Spain effectively.
@@ -68,24 +74,24 @@
 <!-- Experience Section -->
 <section class="section section-alt">
     <div class="container">
-        <h2 class="section-title-main">Experience</h2>
+        <h2 class="section-title-main" data-translate="experience.title">Experience</h2>
         
         <div class="timeline-item">
             <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
             <div class="timeline-content">
-                <h3 class="timeline-title">Software Development Engineer JS5</h3>
-                <p class="timeline-company">Ericsson Spain SA. | Madrid</p>
-                <p class="timeline-date">July 2021 - Present</p>
-                <p class="timeline-description">
+                <h3 class="timeline-title" data-translate="experience.ericsson.title">Software Development Engineer JS5</h3>
+                <p class="timeline-company" data-translate="experience.ericsson.company">Ericsson Spain SA. | Madrid</p>
+                <p class="timeline-date" data-translate="experience.ericsson.date">July 2021 - Present</p>
+                <p class="timeline-description" data-translate="experience.ericsson.description">
                     Experience in LTE EPC and 5G Packet Core features, including Deep Packet Inspection, IP Allocator and L2TP/PFCP Endpoint.
                 </p>
                 <ul class="timeline-list">
-                    <li>Design, documentation, implementation, and testing of user stories using C/C++ and Python</li>
-                    <li>Code improvements, such as refactoring, removing duplicate code, and resolving clang-tidy errors</li>
-                    <li>Bug fixing and stability enhancements, along with the development of functional and unit tests</li>
-                    <li>Automation scripting using Shell and Python</li>
-                    <li>Strong familiarity with network protocols, including TCP/IP, UDP, HTTP, L2TP, PFCP, DNS, and more</li>
-                    <li>Familiarity with software development tools and methodologies, such as Scrum, Kanban, Git, Gerrit, CI/CD, JIRA, UML</li>
+                    <li data-translate="experience.ericsson.task1">Design, documentation, implementation, and testing of user stories using C/C++ and Python</li>
+                    <li data-translate="experience.ericsson.task2">Code improvements, such as refactoring, removing duplicate code, and resolving clang-tidy errors</li>
+                    <li data-translate="experience.ericsson.task3">Bug fixing and stability enhancements, along with the development of functional and unit tests</li>
+                    <li data-translate="experience.ericsson.task4">Automation scripting using Shell and Python</li>
+                    <li data-translate="experience.ericsson.task5">Strong familiarity with network protocols, including TCP/IP, UDP, HTTP, L2TP, PFCP, DNS, and more</li>
+                    <li data-translate="experience.ericsson.task6">Familiarity with software development tools and methodologies, such as Scrum, Kanban, Git, Gerrit, CI/CD, JIRA, UML</li>
                 </ul>
             </div>
         </div>
@@ -93,14 +99,14 @@
         <div class="timeline-item">
             <div class="timeline-badge"><i class="fas fa-rocket"></i></div>
             <div class="timeline-content">
-                <h3 class="timeline-title">Full-stack Developer</h3>
-                <p class="timeline-company">Freelance</p>
-                <p class="timeline-date">Feb 2025 – Present</p>
-                <p class="timeline-description">
+                <h3 class="timeline-title" data-translate="experience.freelance.title">Full-stack Developer</h3>
+                <p class="timeline-company" data-translate="experience.freelance.company">Freelance</p>
+                <p class="timeline-date" data-translate="experience.freelance.date">Feb 2025 – Present</p>
+                <p class="timeline-description" data-translate="experience.freelance.description">
                     Develop web applications with React, Django and PostgreSQL deployed in Google Cloud.
                 </p>
                 <ul class="timeline-list">
-                    <li><strong>xmexpress.es:</strong> Built a complete business management system for a logistics company using React (frontend), Django REST Framework (backend), and PostgreSQL (database), deployed on Google Cloud Platform</li>
+                    <li data-translate="experience.freelance.task1"><strong>xmexpress.es:</strong> Built a complete business management system for a logistics company using React (frontend), Django REST Framework (backend), and PostgreSQL (database), deployed on Google Cloud Platform</li>
                 </ul>
             </div>
         </div>
@@ -108,10 +114,10 @@
         <div class="timeline-item">
             <div class="timeline-badge"><i class="fas fa-flask"></i></div>
             <div class="timeline-content">
-                <h3 class="timeline-title">R&D Software Development Engineer Intern</h3>
-                <p class="timeline-company">Ericsson Spain SA. | Madrid</p>
-                <p class="timeline-date">July 2020 – June 2021</p>
-                <p class="timeline-description">
+                <h3 class="timeline-title" data-translate="experience.intern.title">R&D Software Development Engineer Intern</h3>
+                <p class="timeline-company" data-translate="experience.intern.company">Ericsson Spain SA. | Madrid</p>
+                <p class="timeline-date" data-translate="experience.intern.date">July 2020 – June 2021</p>
+                <p class="timeline-description" data-translate="experience.intern.description">
                     Traffic optimization and streaming performance analysis using NS-3, including ABR module development in C++.
                 </p>
             </div>
@@ -122,28 +128,28 @@
 <!-- Education Section -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title-main">Education</h2>
+        <h2 class="section-title-main" data-translate="education.title">Education</h2>
         
         <div class="education-grid">
             <div class="education-card">
                 <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h3 class="education-degree">MEng in Telecommunication Engineering</h3>
-                <p class="education-school">Universidad Politécnica de Madrid | Spain</p>
-                <p class="education-date">September 2019 – July 2021</p>
+                <h3 class="education-degree" data-translate="education.meng.degree">MEng in Telecommunication Engineering</h3>
+                <p class="education-school" data-translate="education.meng.school">Universidad Politécnica de Madrid | Spain</p>
+                <p class="education-date" data-translate="education.meng.date">September 2019 – July 2021</p>
             </div>
 
             <div class="education-card">
                 <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h3 class="education-degree">BEng in Telecommunication Technologies and Services Engineering</h3>
-                <p class="education-school">Universidad Politécnica de Madrid | Spain</p>
-                <p class="education-date">September 2015 – July 2019</p>
+                <h3 class="education-degree" data-translate="education.beng.degree">BEng in Telecommunication Technologies and Services Engineering</h3>
+                <p class="education-school" data-translate="education.beng.school">Universidad Politécnica de Madrid | Spain</p>
+                <p class="education-date" data-translate="education.beng.date">September 2015 – July 2019</p>
             </div>
 
             <div class="education-card">
                 <div class="education-icon"><i class="fas fa-globe"></i></div>
-                <h3 class="education-degree">Visiting Research Student - Computer Science</h3>
-                <p class="education-school">Tsinghua University | China</p>
-                <p class="education-date">September 2018 – January 2019</p>
+                <h3 class="education-degree" data-translate="education.tsinghua.degree">Visiting Research Student - Computer Science</h3>
+                <p class="education-school" data-translate="education.tsinghua.school">Tsinghua University | China</p>
+                <p class="education-date" data-translate="education.tsinghua.date">September 2018 – January 2019</p>
             </div>
         </div>
     </div>
@@ -152,38 +158,38 @@
 <!-- Courses Section -->
 <section class="section section-alt">
     <div class="container">
-        <h2 class="section-title-main">Courses & Certifications</h2>
+        <h2 class="section-title-main" data-translate="courses.title">Courses & Certifications</h2>
         
         <div class="courses-grid">
             <div class="course-item">
                 <div class="course-icon"><i class="fas fa-book"></i></div>
                 <div>
-                    <h4 class="course-name">Cloud Native Engineering Fundamentals</h4>
-                    <p class="course-provider">Ericsson | September 2023</p>
+                    <h4 class="course-name" data-translate="courses.cloud.name">Cloud Native Engineering Fundamentals</h4>
+                    <p class="course-provider" data-translate="courses.cloud.provider">Ericsson | September 2023</p>
                 </div>
             </div>
 
             <div class="course-item">
                 <div class="course-icon"><i class="fas fa-book"></i></div>
                 <div>
-                    <h4 class="course-name">Redis In-memory Data Store</h4>
-                    <p class="course-provider">Skillsoft | May 2024</p>
+                    <h4 class="course-name" data-translate="courses.redis.name">Redis In-memory Data Store</h4>
+                    <p class="course-provider" data-translate="courses.redis.provider">Skillsoft | May 2024</p>
                 </div>
             </div>
 
             <div class="course-item">
                 <div class="course-icon"><i class="fas fa-book"></i></div>
                 <div>
-                    <h4 class="course-name">Docker intro + Kubernetes & Helm admin</h4>
-                    <p class="course-provider">Component Soft | August 2024</p>
+                    <h4 class="course-name" data-translate="courses.docker.name">Docker intro + Kubernetes & Helm admin</h4>
+                    <p class="course-provider" data-translate="courses.docker.provider">Component Soft | August 2024</p>
                 </div>
             </div>
 
             <div class="course-item">
                 <div class="course-icon"><i class="fas fa-book"></i></div>
                 <div>
-                    <h4 class="course-name">Go Language</h4>
-                    <p class="course-provider">Ericsson & Universidad Carlos III | October 2024</p>
+                    <h4 class="course-name" data-translate="courses.go.name">Go Language</h4>
+                    <p class="course-provider" data-translate="courses.go.provider">Ericsson & Universidad Carlos III | October 2024</p>
                 </div>
             </div>
         </div>
@@ -193,20 +199,20 @@
 <!-- Skills Section -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title-main">Skills</h2>
+        <h2 class="section-title-main" data-translate="skills.title">Skills</h2>
         
         <div class="skills-grid">
             <div class="skill-category">
-                <h3 class="skill-category-title"><i class="fas fa-comments"></i> Languages</h3>
+                <h3 class="skill-category-title" data-translate="skills.languages.title"><i class="fas fa-comments"></i> Languages</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Chinese (Native)</span>
-                    <span class="skill-tag">Spanish (Native)</span>
-                    <span class="skill-tag">English (C1)</span>
+                    <span class="skill-tag" data-translate="skills.languages.chinese">Chinese (Native)</span>
+                    <span class="skill-tag" data-translate="skills.languages.spanish">Spanish (Native)</span>
+                    <span class="skill-tag" data-translate="skills.languages.english">English (C1)</span>
                 </div>
             </div>
 
             <div class="skill-category">
-                <h3 class="skill-category-title"><i class="fas fa-laptop-code"></i> Programming</h3>
+                <h3 class="skill-category-title" data-translate="skills.programming.title"><i class="fas fa-laptop-code"></i> Programming</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">C/C++</span>
                     <span class="skill-tag">Python</span>
@@ -218,7 +224,7 @@
             </div>
 
             <div class="skill-category">
-                <h3 class="skill-category-title"><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                <h3 class="skill-category-title" data-translate="skills.technologies.title"><i class="fas fa-tools"></i> Tools & Technologies</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Docker</span>
                     <span class="skill-tag">Git</span>
@@ -248,6 +254,10 @@
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
+            // Trigger translations after footer is loaded
+            if (typeof window.initTranslations === 'function') {
+                window.initTranslations();
+            }
         });
 </script>
 

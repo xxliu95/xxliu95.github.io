@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="js/translations.js"></script>
     
     <title>Tools - Xinxin Liu</title>
 </head>
@@ -23,61 +24,65 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             document.querySelectorAll('.nav-item')[1].classList.add('active');
+            // Trigger translations after header is loaded
+            if (typeof window.initTranslations === 'function') {
+                window.initTranslations();
+            }
         });
 </script>
 
 <div class="container" style="margin-top: 5em">
     <div class="row d-flex justify-content-center p-4">
-        <h1 class="text-white" style="text-shadow: 2px 2px 6px #111111">Herramientas</h1>
+        <h1 class="text-white" style="text-shadow: 2px 2px 6px #111111" data-translate="tools.title">Herramientas</h1>
     </div>
     
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
             <div class="card mb-4 shadow tool-card">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3">Número a letras</h3>
-                    <p class="card-text">Convierte números a su representación en letras en español. Soporta números enteros y decimales.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#numeroModal">Abrir herramienta</button>
+                    <h3 class="card-title mb-3" data-translate="tools.numero.title">Número a letras</h3>
+                    <p class="card-text" data-translate="tools.numero.description">Convierte números a su representación en letras en español. Soporta números enteros y decimales.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#numeroModal" data-translate="tools.numero.button">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3">Generador de Código QR</h3>
-                    <p class="card-text">Genera códigos QR personalizados a partir de texto, URLs o cualquier información.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#qrModal">Abrir herramienta</button>
+                    <h3 class="card-title mb-3" data-translate="tools.qr.title">Generador de Código QR</h3>
+                    <p class="card-text" data-translate="tools.qr.description">Genera códigos QR personalizados a partir de texto, URLs o cualquier información.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#qrModal" data-translate="tools.qr.button">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3"></i>Generador de Paleta de Colores</h3>
-                    <p class="card-text">Genera paletas de colores armoniosas con códigos hexadecimales para tus proyectos.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#colorModal">Abrir herramienta</button>
+                    <h3 class="card-title mb-3" data-translate="tools.color.title"></i>Generador de Paleta de Colores</h3>
+                    <p class="card-text" data-translate="tools.color.description">Genera paletas de colores armoniosas con códigos hexadecimales para tus proyectos.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#colorModal" data-translate="tools.color.button">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3"></i>Conversor de Unidades</h3>
-                    <p class="card-text">Convierte entre diferentes unidades de longitud, peso y temperatura.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#unitModal">Abrir herramienta</button>
+                    <h3 class="card-title mb-3" data-translate="tools.unit.title"></i>Conversor de Unidades</h3>
+                    <p class="card-text" data-translate="tools.unit.description">Convierte entre diferentes unidades de longitud, peso y temperatura.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#unitModal" data-translate="tools.unit.button">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3">Contador de Palabras</h3>
-                    <p class="card-text">Cuenta palabras, caracteres, líneas y proporciona estadísticas de texto.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#wordModal">Abrir herramienta</button>
+                    <h3 class="card-title mb-3" data-translate="tools.word.title">Contador de Palabras</h3>
+                    <p class="card-text" data-translate="tools.word.description">Cuenta palabras, caracteres, líneas y proporciona estadísticas de texto.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#wordModal" data-translate="tools.word.button">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3">Formateador JSON</h3>
-                    <p class="card-text">Formatea, valida y embellece código JSON de manera rápida y sencilla.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#jsonModal">Abrir herramienta</button>
+                    <h3 class="card-title mb-3" data-translate="tools.json.title">Formateador JSON</h3>
+                    <p class="card-text" data-translate="tools.json.description">Formatea, valida y embellece código JSON de manera rápida y sencilla.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#jsonModal" data-translate="tools.json.button">Abrir herramienta</button>
                 </div>
             </div>
         </div>
@@ -89,17 +94,17 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <h2 class="modal-title text-white" id="numeroModalLabel">Número a letras en español</h2>
+                <h2 class="modal-title text-white" id="numeroModalLabel" data-translate="tools.numero.modal.title">Número a letras en español</h2>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="numeroForm" class="styled-form">
                     <div class="mb-4">
-                        <label for="numero">Ingresa un número</label>
-                        <input type="text" id="numero" name="numero" placeholder="Ejemplo: 123 o 45.67" required>
+                        <label for="numero" data-translate="tools.numero.modal.label">Ingresa un número</label>
+                        <input type="text" id="numero" name="numero" placeholder="Ejemplo: 123 o 45.67" data-translate="tools.numero.modal.placeholder" required>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-convert w-100">Convertir</button>
+                        <button type="submit" class="btn btn-convert w-100" data-translate="tools.numero.modal.convert">Convertir</button>
                     </div>
                 </form>
                 <div class="text-center">
@@ -216,20 +221,20 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="qrModalLabel">Generador de Código QR</h2>
+                <h2 class="modal-title" id="qrModalLabel" data-translate="tools.qr.modal.title">Generador de Código QR</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="qrForm" class="styled-form">
                     <div class="mb-4">
-                        <label for="qrText">Texto o URL</label>
-                        <input type="text" id="qrText" placeholder="Ejemplo: https://tuwebsite.com" required>
+                        <label for="qrText" data-translate="tools.qr.modal.label">Texto o URL</label>
+                        <input type="text" id="qrText" placeholder="Ejemplo: https://tuwebsite.com" data-translate="tools.qr.modal.placeholder" required>
                     </div>
-                    <button type="submit" class="btn btn-convert">Generar QR</button>
+                    <button type="submit" class="btn btn-convert" data-translate="tools.qr.modal.generate">Generar QR</button>
                 </form>
                 <div id="qrcode" class="text-center mt-4" style="display: none;"></div>
                 <div class="text-center mt-3">
-                    <button id="downloadQR" class="btn btn-convert" style="display: none;">Descargar QR</button>
+                    <button id="downloadQR" class="btn btn-convert" style="display: none;" data-translate="tools.qr.modal.download">Descargar QR</button>
                 </div>
             </div>
         </div>
@@ -241,11 +246,11 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="colorModalLabel">Generador de Paleta de Colores</h2>
+                <h2 class="modal-title" id="colorModalLabel" data-translate="tools.color.modal.title">Generador de Paleta de Colores</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <button id="generateColors" class="btn btn-convert mb-4">Generar Nueva Paleta</button>
+                <button id="generateColors" class="btn btn-convert mb-4" data-translate="tools.color.modal.generate">Generar Nueva Paleta</button>
                 <div id="colorPalette" class="row g-3"></div>
             </div>
         </div>
@@ -257,34 +262,34 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="unitModalLabel">Conversor de Unidades</h2>
+                <h2 class="modal-title" id="unitModalLabel" data-translate="tools.unit.modal.title">Conversor de Unidades</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="unitForm" class="styled-form">
                     <div class="mb-4">
-                        <label for="unitType">Tipo de conversión</label>
+                        <label for="unitType" data-translate="tools.unit.modal.type">Tipo de conversión</label>
                         <select id="unitType" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
-                            <option value="length">Longitud</option>
-                            <option value="weight">Peso</option>
-                            <option value="temperature">Temperatura</option>
+                            <option value="length" data-translate="tools.unit.modal.type.length">Longitud</option>
+                            <option value="weight" data-translate="tools.unit.modal.type.weight">Peso</option>
+                            <option value="temperature" data-translate="tools.unit.modal.type.temperature">Temperatura</option>
                         </select>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="unitFrom">De</label>
+                            <label for="unitFrom" data-translate="tools.unit.modal.from">De</label>
                             <select id="unitFrom" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="unitTo">A</label>
+                            <label for="unitTo" data-translate="tools.unit.modal.to">A</label>
                             <select id="unitTo" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
                             </select>
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label for="unitValue">Valor</label>
-                        <input type="number" id="unitValue" step="any" placeholder="Ingresa el valor" required>
+                        <label for="unitValue" data-translate="tools.unit.modal.value">Valor</label>
+                        <input type="number" id="unitValue" step="any" placeholder="Ingresa el valor" data-translate="tools.unit.modal.placeholder" required>
                     </div>
                 </form>
                 <div id="unitResult" style="display: none;"></div>
@@ -298,14 +303,14 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="wordModalLabel">Contador de Palabras</h2>
+                <h2 class="modal-title" id="wordModalLabel" data-translate="tools.word.modal.title">Contador de Palabras</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="styled-form">
                     <div class="mb-4">
-                        <label for="textInput">Texto</label>
-                        <textarea id="textInput" rows="8" placeholder="Escribe o pega tu texto aquí..." style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem; resize: vertical;"></textarea>
+                        <label for="textInput" data-translate="tools.word.modal.label">Texto</label>
+                        <textarea id="textInput" rows="8" placeholder="Escribe o pega tu texto aquí..." data-translate="tools.word.modal.placeholder" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem; resize: vertical;"></textarea>
                     </div>
                 </div>
                 <div id="wordStats"></div>
@@ -319,18 +324,18 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="jsonModalLabel">Formateador JSON</h2>
+                <h2 class="modal-title" id="jsonModalLabel" data-translate="tools.json.modal.title">Formateador JSON</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="styled-form">
                     <div class="mb-4">
-                        <label for="jsonInput">JSON sin formatear</label>
-                        <textarea id="jsonInput" rows="8" placeholder='{"ejemplo": "Pega tu JSON aquí"}' style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem; font-family: monospace; resize: vertical;"></textarea>
+                        <label for="jsonInput" data-translate="tools.json.modal.label">JSON sin formatear</label>
+                        <textarea id="jsonInput" rows="8" placeholder='{"ejemplo": "Pega tu JSON aquí"}' data-translate="tools.json.modal.placeholder" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem; font-family: monospace; resize: vertical;"></textarea>
                     </div>
                     <div class="d-flex gap-2 mb-4">
-                        <button id="formatJSON" class="btn btn-convert flex-fill">Formatear</button>
-                        <button id="minifyJSON" class="btn btn-convert flex-fill">Minificar</button>
+                        <button id="formatJSON" class="btn btn-convert flex-fill" data-translate="tools.json.modal.format">Formatear</button>
+                        <button id="minifyJSON" class="btn btn-convert flex-fill" data-translate="tools.json.modal.minify">Minificar</button>
                     </div>
                 </div>
                 <div id="jsonOutput" style="display: none;"></div>
@@ -400,7 +405,9 @@ function generatePalette() {
             navigator.clipboard.writeText(color);
             const box = this;
             const originalHTML = box.innerHTML;
-            box.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><i class="fas fa-check me-2"></i>Copiado</div>`;
+            const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+            const copiedText = translations[savedLang]['tools.color.modal.copied'] || 'Copiado';
+            box.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><i class="fas fa-check me-2"></i>${copiedText}</div>`;
             setTimeout(() => box.innerHTML = originalHTML, 1000);
         });
         palette.appendChild(col);
@@ -510,23 +517,27 @@ document.getElementById('textInput').addEventListener('input', function() {
             <div class="row text-center">
                 <div class="col-6 col-md-3 mb-3">
                     <div style="font-size: 2rem; font-weight: 700; color: #6366f1;">${words}</div>
-                    <div style="color: #6b7280; font-size: 0.9rem;">Palabras</div>
+                    <div style="color: #6b7280; font-size: 0.9rem;" data-translate="tools.word.modal.words">Palabras</div>
                 </div>
                 <div class="col-6 col-md-3 mb-3">
                     <div style="font-size: 2rem; font-weight: 700; color: #6366f1;">${chars}</div>
-                    <div style="color: #6b7280; font-size: 0.9rem;">Caracteres</div>
+                    <div style="color: #6b7280; font-size: 0.9rem;" data-translate="tools.word.modal.chars">Caracteres</div>
                 </div>
                 <div class="col-6 col-md-3 mb-3">
                     <div style="font-size: 2rem; font-weight: 700; color: #6366f1;">${charsNoSpaces}</div>
-                    <div style="color: #6b7280; font-size: 0.9rem;">Sin espacios</div>
+                    <div style="color: #6b7280; font-size: 0.9rem;" data-translate="tools.word.modal.charsNoSpaces">Sin espacios</div>
                 </div>
                 <div class="col-6 col-md-3 mb-3">
                     <div style="font-size: 2rem; font-weight: 700; color: #6366f1;">${lines}</div>
-                    <div style="color: #6b7280; font-size: 0.9rem;">Líneas</div>
+                    <div style="color: #6b7280; font-size: 0.9rem;" data-translate="tools.word.modal.lines">Líneas</div>
                 </div>
             </div>
         </div>
     `;
+    
+    // Re-translate newly added elements
+    const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+    translatePage(savedLang);
 });
 
 // JSON Formatter
@@ -542,7 +553,9 @@ document.getElementById('formatJSON').addEventListener('click', function() {
         output.style.display = 'block';
         error.style.display = 'none';
     } catch (e) {
-        error.textContent = 'Error: JSON inválido - ' + e.message;
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        const errorMsg = translations[savedLang]['tools.json.modal.error'] || 'Error: JSON inválido';
+        error.textContent = errorMsg + ' - ' + e.message;
         error.style.display = 'block';
         output.style.display = 'none';
     }
@@ -560,7 +573,9 @@ document.getElementById('minifyJSON').addEventListener('click', function() {
         output.style.display = 'block';
         error.style.display = 'none';
     } catch (e) {
-        error.textContent = 'Error: JSON inválido - ' + e.message;
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        const errorMsg = translations[savedLang]['tools.json.modal.error'] || 'Error: JSON inválido';
+        error.textContent = errorMsg + ' - ' + e.message;
         error.style.display = 'block';
         output.style.display = 'none';
     }
@@ -573,6 +588,10 @@ document.getElementById('minifyJSON').addEventListener('click', function() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
+            // Trigger translations after footer is loaded
+            if (typeof window.initTranslations === 'function') {
+                window.initTranslations();
+            }
         });
 </script>
 </body>

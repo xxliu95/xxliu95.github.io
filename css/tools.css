@@ -38,7 +38,7 @@ h1 {
     border: none;
     padding: 0.75rem 1.5rem;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     font-size: 1rem;
 }
@@ -59,7 +59,7 @@ h1 {
 .modal-content {
     background: #ffffff;
     border: none;
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     margin: auto;
 }
@@ -127,26 +127,36 @@ h1 {
 
 /* Button */
 .btn-convert {
-    background: #6366f1;
+    background: linear-gradient(135deg, #6366f1 0%, #6366f1 100%);
     color: white;
     border: none;
     padding: 0.75rem 2rem;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.2s ease;
+    border-radius: 12px;
+    transition: all 0.3s ease;
     margin-top: 1.5rem;
     width: 100%;
+    box-shadow: 0 2px 8px #6366f166;
+    cursor: pointer;
+    outline: none;
 }
 
 .btn-convert:hover {
-    background: #5558e3;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 6px 20px #6366f180;
+    transform: translateY(-2px);
     color: white;
 }
 
+.btn-convert:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
 .btn-convert:active {
-    transform: scale(0.98);
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 8px #6366f166;
+    outline: none;
 }
 
 /* Result */
@@ -162,6 +172,18 @@ h1 {
     border: 2px solid #d1d5db;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.3s ease;
+}
+#qrcode {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#qrcode img,
+#qrcode canvas {
+    display: block;
+    margin: 0 auto;
 }
 
 @keyframes fadeIn {

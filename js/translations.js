@@ -122,6 +122,26 @@ const translations = {
         'tools.unit.modal.value': 'Valor',
         'tools.unit.modal.placeholder': 'Ingresa el valor',
         
+        // Unit converter units - Spanish
+        'tools.unit.length.metros': 'Metros',
+        'tools.unit.length.kilómetros': 'Kilómetros',
+        'tools.unit.length.centímetros': 'Centímetros',
+        'tools.unit.length.milímetros': 'Milímetros',
+        'tools.unit.length.millas': 'Millas',
+        'tools.unit.length.pies': 'Pies',
+        'tools.unit.length.pulgadas': 'Pulgadas',
+        
+        'tools.unit.weight.kilogramos': 'Kilogramos',
+        'tools.unit.weight.gramos': 'Gramos',
+        'tools.unit.weight.miligramos': 'Miligramos',
+        'tools.unit.weight.libras': 'Libras',
+        'tools.unit.weight.onzas': 'Onzas',
+        'tools.unit.weight.toneladas': 'Toneladas',
+        
+        'tools.unit.temperature.celsius': 'Celsius',
+        'tools.unit.temperature.fahrenheit': 'Fahrenheit',
+        'tools.unit.temperature.kelvin': 'Kelvin',
+        
         'tools.word.title': 'Contador de Palabras',
         'tools.word.description': 'Cuenta palabras, caracteres, líneas y proporciona estadísticas de texto.',
         'tools.word.button': 'Abrir herramienta',
@@ -271,6 +291,26 @@ const translations = {
         'tools.unit.modal.value': 'Value',
         'tools.unit.modal.placeholder': 'Enter value',
         
+        // Unit converter units - English
+        'tools.unit.length.metros': 'Meters',
+        'tools.unit.length.kilómetros': 'Kilometers',
+        'tools.unit.length.centímetros': 'Centimeters',
+        'tools.unit.length.milímetros': 'Millimeters',
+        'tools.unit.length.millas': 'Miles',
+        'tools.unit.length.pies': 'Feet',
+        'tools.unit.length.pulgadas': 'Inches',
+        
+        'tools.unit.weight.kilogramos': 'Kilograms',
+        'tools.unit.weight.gramos': 'Grams',
+        'tools.unit.weight.miligramos': 'Milligrams',
+        'tools.unit.weight.libras': 'Pounds',
+        'tools.unit.weight.onzas': 'Ounces',
+        'tools.unit.weight.toneladas': 'Tonnes',
+        
+        'tools.unit.temperature.celsius': 'Celsius',
+        'tools.unit.temperature.fahrenheit': 'Fahrenheit',
+        'tools.unit.temperature.kelvin': 'Kelvin',
+        
         'tools.word.title': 'Word Counter',
         'tools.word.description': 'Count words, characters, lines and provide text statistics.',
         'tools.word.button': 'Open Tool',
@@ -419,6 +459,26 @@ const translations = {
         'tools.unit.modal.to': '到',
         'tools.unit.modal.value': '数值',
         'tools.unit.modal.placeholder': '输入数值',
+        
+        // Unit converter units - Chinese
+        'tools.unit.length.metros': '米',
+        'tools.unit.length.kilómetros': '公里',
+        'tools.unit.length.centímetros': '厘米',
+        'tools.unit.length.milímetros': '毫米',
+        'tools.unit.length.millas': '英里',
+        'tools.unit.length.pies': '英尺',
+        'tools.unit.length.pulgadas': '英寸',
+        
+        'tools.unit.weight.kilogramos': '公斤',
+        'tools.unit.weight.gramos': '克',
+        'tools.unit.weight.miligramos': '毫克',
+        'tools.unit.weight.libras': '磅',
+        'tools.unit.weight.onzas': '盎司',
+        'tools.unit.weight.toneladas': '吨',
+        
+        'tools.unit.temperature.celsius': '摄氏度',
+        'tools.unit.temperature.fahrenheit': '华氏度',
+        'tools.unit.temperature.kelvin': '开尔文',
         
         'tools.word.title': '字数统计',
         'tools.word.description': '实时统计文本字数、字符、行数。',

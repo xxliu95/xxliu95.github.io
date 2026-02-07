@@ -1,6 +1,7 @@
 body {
-    background-image: url("../public/bg1.jpg ");
+    background-image: linear-gradient(rgba(30, 41, 59, 0.85), rgba(30, 41, 59, 0.85)), url("../public/bg1.jpg ");
     background-size: cover;
+    background-attachment: fixed;
 }
 
 h4 {

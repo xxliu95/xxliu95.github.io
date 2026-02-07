@@ -10,6 +10,7 @@
     font-weight: 700;
     color: #1f2937;
     letter-spacing: -0.02em;
+    padding-left: 2rem;
     transition: color 0.3s ease;
 }
 
@@ -38,10 +39,41 @@
     font-weight: 600;
 }
 
+/* Language selector in header */
+.modern-navbar .language-dropdown {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    margin-left: 2rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modern-navbar .language-dropdown:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+.modern-navbar .language-dropdown:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.modern-navbar .nav-item:has(.language-dropdown) {
+    display: flex;
+    align-items: center;
+}
+
 /* Desktop: align items to the right */
 @media (min-width: 992px) {
     .modern-navbar .navbar-nav {
         margin-left: auto;
+        align-items: center;
     }
 }
 
@@ -51,6 +83,13 @@
         padding: 0.75rem 0;
     }
     
+    .modern-navbar .language-dropdown {
+        margin: 1rem auto 0;
+    }
+    
+    .modern-navbar .nav-item:has(.language-dropdown) {
+        justify-content: center;
+    }
     .modern-navbar .navbar-brand {
         font-size: 1.25rem;
     }

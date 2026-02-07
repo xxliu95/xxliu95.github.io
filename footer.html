@@ -3,93 +3,9 @@
 <footer class="modern-footer">
     <div class="container">
         <div class="row align-items-center py-4">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="col-12 text-center">
                 <p class="footer-text mb-0" data-translate="footer.rights">&copy; 2026 Xinxin Liu. Todos los derechos reservados.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                <div class="language-selector">
-                    <!-- <label for="languageSelect" class="me-2">
-                        <i class="globe fas fa-globe"></i> <span class="language-label" data-translate="footer.language">Idioma</span>
-                    </label> -->
-                    <select id="languageSelect" class="language-dropdown">
-                        <option value="es">Español</option>
-                        <option value="en">English</option>
-                        <option value="zh">中文</option>
-                    </select>
-                </div>
             </div>
         </div>
     </div>
 </footer>
-
-<script>
-    // Wait a bit to ensure everything is loaded
-    setTimeout(() => {
-        const languageSelector = document.getElementById('languageSelect');
-        if (!languageSelector) {
-            console.error('Language selector not found');
-            return;
-        }
-
-        // Language selector functionality
-        languageSelector.addEventListener('change', function() {
-            const selectedLang = this.value;
-            console.log('Language changed to:', selectedLang);
-            localStorage.setItem('preferredLanguage', selectedLang);
-            
-            // Translate the page
-            if (typeof window.translatePage === 'function') {
-                window.translatePage(selectedLang);
-            } else {
-                console.error('translatePage function not found');
-            }
-            
-            const messages = {
-                es: 'Idioma cambiado a Español',
-                en: 'Language changed to English',
-                zh: '语言已更改为中文'
-            };
-            
-            const notification = document.createElement('div');
-            notification.textContent = messages[selectedLang];
-            notification.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #6366f1; color: white; padding: 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; animation: slideIn 0.3s ease;';
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            }, 2000);
-        });
-        
-        // Initialize translations when footer loads
-        if (typeof window.initTranslations === 'function') {
-            window.initTranslations();
-        } else {
-            console.error('initTranslations function not found');
-        }
-    }, 100);
-</script>
-
-<style>
-@keyframes slideIn {
-    from {
-        transform: translateX(400px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOut {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(400px);
-        opacity: 0;
-    }
-}
-</style>

@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-light modern-navbar">
     <div class="container-fluid">
         <span></span>
-        <a class="navbar-brand" href="#">Xinxin Liu</a>
+        <a class="navbar-brand d-none d-lg-inline" href="#">Xinxin Liu</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,16 +30,3 @@
     </div>
 </nav>
 
-<script>
-    // Automatically set base URL based on environment
-    (function() {
-        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        const baseUrl = isLocal ? 'http://localhost:8000' : 'https://xxliu95.github.io';
-        
-        // Update all links with data-page attribute
-        document.querySelectorAll('a[data-page]').forEach(link => {
-            const page = link.getAttribute('data-page');
-            link.href = baseUrl + page;
-        });
-    })();
-</script>

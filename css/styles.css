@@ -16,3 +16,17 @@ h4 {
     line-height: 50px;
     background-color: #333333;
 }
+
+/* Index page styles */
+.profile-container {
+    margin-top: 10em;
+}
+
+.profile-image {
+    width: 14em;
+    height: 14em;
+}
+
+.profile-title {
+    text-shadow: 2px 2px 6px #111111;
+}

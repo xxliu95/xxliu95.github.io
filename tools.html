@@ -317,7 +317,7 @@
         const numeroNormalizado = normalizarNumeroEntrada(numero.toString());
         let resultado;
 
-        if (numeroNormalizado.decimal) {
+        if (numeroNormalizado.decimal && parseInt(numeroNormalizado.decimal, 10) !== 0) {
             const enteroLetras = convertirMillones(parseInt(numeroNormalizado.entero, 10));
             const decimalLetras = convertirMillones(parseInt(numeroNormalizado.decimal, 10));
             resultado = enteroLetras + ' con ' + decimalLetras;

@@ -101,11 +101,9 @@
                     </div>
                     <button type="submit" class="text-white btn-convert" data-translate="tools.numero.modal.convert">Convertir</button>
                 </form>
-                <div id="resultadoWrapper" class="mt-3 d-flex align-items-center" style="display: none;">
-                    <div id="resultado" style="margin-right: 0.5rem;"></div>
-                    <button id="copyNumero" type="button" class="btn btn-link p-0" style="display: none; color: #ffffff;" aria-label="Copiar resultado" title="Copiar resultado">
-                        <i class="fa-regular fa-copy"></i>
-                    </button>
+                <div id="resultado" style="display: none;"></div>
+                <div class="mt-3">
+                    <button id="copyNumero" class="text-white btn-convert" style="display: none;" data-translate="tools.numero.modal.copy">Copiar resultado</button>
                 </div>
             </div>
         </div>
@@ -334,7 +332,6 @@
         e.preventDefault();
         const numeroInput = document.getElementById('numero').value;
         const resultado = document.getElementById('resultado');
-        const resultadoWrapper = document.getElementById('resultadoWrapper');
         const copyButton = document.getElementById('copyNumero');
         
         try {
@@ -351,11 +348,11 @@
                 resultado.dataset.resultado = letras;
                 copyButton.style.display = 'inline-block';
             }
-            resultadoWrapper.style.display = 'flex';
+            resultado.style.display = 'block';
         } catch (error) {
             resultado.textContent = 'Error: No se pudo convertir el número';
             resultado.style.color = '#ff6b6b';
-            resultadoWrapper.style.display = 'flex';
+            resultado.style.display = 'block';
             copyButton.style.display = 'none';
         }
     });
@@ -368,21 +365,22 @@
 
         navigator.clipboard.writeText(texto);
         const copyButton = this;
-        const icon = copyButton.querySelector('i');
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        const copiedText = translations[savedLang]['tools.numero.modal.copied'] || 'Copiado';
+        const originalText = copyButton.textContent;
 
-        icon.className = 'fa-solid fa-check';
+        copyButton.textContent = copiedText;
         setTimeout(() => {
-            icon.className = 'fa-regular fa-copy';
+            copyButton.textContent = originalText;
         }, 1000);
     });
 
     // Reset form when modal is closed
     document.getElementById('numeroModal').addEventListener('hidden.bs.modal', function () {
         document.getElementById('numeroForm').reset();
-        document.getElementById('resultadoWrapper').style.display = 'none';
+        document.getElementById('resultado').style.display = 'none';
         document.getElementById('resultado').dataset.resultado = '';
         document.getElementById('copyNumero').style.display = 'none';
-        document.querySelector('#copyNumero i').className = 'fa-regular fa-copy';
     });
 
 // QR Code Generator

@@ -30,7 +30,7 @@ const translations = {
         'experience.freelance.company': 'Freelance',
         'experience.freelance.date': 'Feb 2025 – Presente',
         'experience.freelance.description': 'Desarrollo de aplicaciones web con React, Django y PostgreSQL desplegadas en Google Cloud.',
-        'experience.freelance.task1': 'xmexpress.es: Construí un sistema completo de gestión empresarial para una empresa de logística utilizando React (frontend), Django REST Framework (backend) y PostgreSQL (base de datos), desplegado en Google Cloud Platform',
+        'experience.freelance.task1': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> Construí un sistema completo de gestión empresarial para una empresa de logística utilizando React (frontend), Django REST Framework (backend) y PostgreSQL (base de datos), desplegado en Google Cloud Platform',
         
         'experience.intern.title': 'Ingeniero de Desarrollo de Software I+D (Prácticas)',
         'experience.intern.company': 'Ericsson Spain SA. | Madrid',
@@ -201,7 +201,7 @@ const translations = {
         'experience.freelance.company': 'Freelance',
         'experience.freelance.date': 'Feb 2025 – Present',
         'experience.freelance.description': 'Develop web applications with React, Django and PostgreSQL deployed in Google Cloud.',
-        'experience.freelance.task1': 'xmexpress.es: Built a complete business management system for a logistics company using React (frontend), Django REST Framework (backend), and PostgreSQL (database), deployed on Google Cloud Platform',
+        'experience.freelance.task1': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> Built a complete business management system for a logistics company using React (frontend), Django REST Framework (backend), and PostgreSQL (database), deployed on Google Cloud Platform',
         
         'experience.intern.title': 'R&D Software Development Engineer Intern',
         'experience.intern.company': 'Ericsson Spain SA. | Madrid',
@@ -372,7 +372,7 @@ const translations = {
         'experience.freelance.company': '自由职业',
         'experience.freelance.date': '2025年2月 - 至今',
         'experience.freelance.description': '基于React、Django和PostgreSQL开发Web应用，部署于Google Cloud。',
-        'experience.freelance.task1': 'xmexpress.es: 为物流公司搭建完整业务管理系统，采用React前端、Django REST Framework后端、PostgreSQL数据库，部署在Google Cloud Platform',
+        'experience.freelance.task1': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> 为物流公司搭建完整业务管理系统，采用React前端、Django REST Framework后端、PostgreSQL数据库，部署在Google Cloud Platform',
         
         'experience.intern.title': '研发软件开发工程师实习生',
         'experience.intern.company': '爱立信西班牙 | 马德里',
@@ -524,6 +524,14 @@ function translatePage(lang) {
             } else {
                 el.textContent = translations[lang][key];
             }
+        }
+    });
+
+    const htmlElements = document.querySelectorAll('[data-translate-html]');
+    htmlElements.forEach(el => {
+        const key = el.getAttribute('data-translate-html');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
         }
     });
 }

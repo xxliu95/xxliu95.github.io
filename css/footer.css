@@ -8,12 +8,12 @@
 }
 
 .language-label {
-    color: #6366f1;
+    color: #ff7a00;
     padding: 0 0 0 0.5rem;
 }
 
 .footer-text {
-    color: #4b5563;
+    color: #555555;
     font-size: 0.95rem;
     font-weight: 500;
 }
@@ -25,14 +25,14 @@
 }
 
 .language-selector label {
-    color: #4b5563;
+    color: #555555;
     font-weight: 500;
     font-size: 0.95rem;
     margin: 0;
 }
 
 .language-selector i {
-    color: #6366f1;
+    color: #ff7a00;
 }
 
 .language-dropdown {
@@ -49,13 +49,13 @@
 }
 
 .language-dropdown:hover {
-    border-color: #6366f1;
+    border-color: #ff7a00;
     background: #ffffff;
 }
 
 .language-dropdown:focus {
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.16);
 }
 
 @media (max-width: 768px) {

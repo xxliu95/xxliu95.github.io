@@ -8,7 +8,7 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border: 5px solid #6366f1;
+    border: 5px solid #ff7a00;
 }
 
 .hero-title {
@@ -21,7 +21,7 @@
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: #a78bfa;
+    color: #ff7a00;
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
@@ -47,7 +47,7 @@
 }
 
 .contact-link:hover {
-    color: #a78bfa;
+    color: #ff7a00;
 }
 
 /* Section Styles */
@@ -116,13 +116,13 @@
     flex-shrink: 0;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+    background: #ff7a00;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.35);
     color: white;
 }
 
@@ -149,7 +149,7 @@
 
 .timeline-company {
     font-size: 1.1rem;
-    color: #a78bfa;
+    color: #ff7a00;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
@@ -201,7 +201,7 @@
 
 .education-icon {
     font-size: 3rem;
-    color: #6366f1;
+    color: #ff7a00;
     margin-bottom: 1rem;
 }
 
@@ -214,7 +214,7 @@
 
 .education-school {
     font-size: 1rem;
-    color: #a78bfa;
+    color: #ff7a00;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -250,7 +250,7 @@
 .course-icon {
     font-size: 1.75rem;
     flex-shrink: 0;
-    color: #a78bfa;
+    color: #ff7a00;
 }
 
 .course-name {
@@ -291,7 +291,7 @@
 }
 
 .skill-category-title i {
-    color: #a78bfa;
+    color: #ff7a00;
     font-size: 1.3rem;
 }
 
@@ -302,20 +302,20 @@
 }
 
 .skill-tag {
-    background: rgba(99, 102, 241, 0.2);
-    color: #c4b5fd;
+    background: rgba(255, 122, 0, 0.12);
+    color: #e7e7e7;
     padding: 0.4rem 0.9rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 1px solid rgba(167, 139, 250, 0.3);
+    border: 1px solid rgba(255, 122, 0, 0.45);
 }
 
 .skill-tag:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-    background: #6366f1;
+    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.35);
+    background: #ff7a00;
     color: white;
 }
 
@@ -358,8 +358,8 @@
 }
 
 .footer-link:hover {
-    color: #6366f1;
-    background: rgba(99, 102, 241, 0.1);
+    color: #ff7a00;
+    background: rgba(255, 122, 0, 0.15);
     transform: translateY(-3px);
     text-decoration: none;
 }

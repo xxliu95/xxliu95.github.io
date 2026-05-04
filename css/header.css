@@ -8,20 +8,20 @@
 .modern-navbar .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #222222;
     letter-spacing: -0.02em;
     padding-left: 2rem;
     transition: color 0.3s ease;
 }
 
 .modern-navbar .navbar-brand:hover {
-    color: #6366f1;
+    color: #ff7a00;
 }
 
 .modern-navbar .nav-link {
     font-size: 1.05rem;
     font-weight: 500;
-    color: #4b5563;
+    color: #555555;
     padding: 0.75rem 1.25rem;
     margin: 0 0.5rem;
     border-radius: 8px;
@@ -30,12 +30,12 @@
 
 .modern-navbar .nav-link:hover {
     background: #f3f4f6;
-    color: #6366f1;
+    color: #ff7a00;
 }
 
 .modern-navbar .nav-item.active .nav-link {
-    background: #eef2ff;
-    color: #6366f1;
+    background: #f1f1f1;
+    color: #ff7a00;
     font-weight: 600;
 }
 
@@ -47,7 +47,7 @@
     padding: 0.5rem 0.75rem;
     margin-left: 2rem;
     font-size: 0.95rem;
-    color: #4b5563;
+    color: #555555;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -60,8 +60,8 @@
 
 .modern-navbar .language-dropdown:focus {
     outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.16);
 }
 
 .modern-navbar .nav-item:has(.language-dropdown) {

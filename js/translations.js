@@ -15,6 +15,16 @@ const translations = {
         
         // Experience Section
         'experience.title': 'Experiencia',
+        'experience.teamlead.title': 'Team Leader de Desarrollo de Software',
+        'experience.teamlead.company': 'Ericsson Spain SA. | Madrid',
+        'experience.teamlead.date': 'Mayo 2026 - Presente',
+        'experience.teamlead.description': 'Team Leader de un equipo multifuncional de desarrollo de software en el dominio 5G Core UPF. Las principales áreas de responsabilidad incluyen:',
+        'experience.teamlead.task1': 'Responsabilidades de Scrum Master, incluyendo planificación de sprints, refinamiento del backlog y ceremonias Agile',
+        'experience.teamlead.task2': 'Liderazgo y mentoring del equipo, apoyando decisiones técnicas y desarrollo profesional',
+        'experience.teamlead.task3': 'Coordinación con stakeholders, alineando prioridades de negocio, plazos de entrega y requisitos técnicos',
+        'experience.teamlead.task4': 'Planificación de recursos y gestión de riesgos, identificando y resolviendo bloqueos de forma proactiva',
+        'experience.teamlead.task5': 'Impulso de mejoras de proceso para aumentar la eficiencia del equipo y la predictibilidad de las entregas',
+
         'experience.ericsson.title': 'Ingeniero de Desarrollo de Software JS5',
         'experience.ericsson.company': 'Ericsson Spain SA. | Madrid',
         'experience.ericsson.date': 'Julio 2021 - Presente',
@@ -186,6 +196,16 @@ const translations = {
         
         // Experience Section
         'experience.title': 'Experience',
+        'experience.teamlead.title': 'Software Development Team Leader',
+        'experience.teamlead.company': 'Ericsson Spain SA. | Madrid',
+        'experience.teamlead.date': 'May 2026 - Present',
+        'experience.teamlead.description': 'Leading a cross-functional software development team in 5G Core UPF domain. Key areas of responsibility include:',
+        'experience.teamlead.task1': 'Scrum Master responsibilities including sprint planning, backlog refinement, and Agile ceremonies',
+        'experience.teamlead.task2': 'Team leadership and mentoring, supporting technical decisions and professional development',
+        'experience.teamlead.task3': 'Stakeholder coordination, aligning business priorities, delivery timelines, and technical requirements',
+        'experience.teamlead.task4': 'Resource planning and risk management, proactively identifying and resolving blockers',
+        'experience.teamlead.task5': 'Driving process improvements to enhance team efficiency and delivery predictability',
+
         'experience.ericsson.title': 'Software Development Engineer JS5',
         'experience.ericsson.company': 'Ericsson Spain SA. | Madrid',
         'experience.ericsson.date': 'July 2021 - Present',
@@ -357,6 +377,16 @@ const translations = {
         
         // Experience Section
         'experience.title': '工作经验',
+        'experience.teamlead.title': '软件开发团队负责人',
+        'experience.teamlead.company': '爱立信西班牙 | 马德里',
+        'experience.teamlead.date': '2026年5月 - 至今',
+        'experience.teamlead.description': '负责领导5G Core UPF领域的跨职能软件开发团队。主要职责包括：',
+        'experience.teamlead.task1': '承担Scrum Master职责，包括冲刺计划、需求列表梳理及敏捷会议组织',
+        'experience.teamlead.task2': '团队领导与辅导，支持技术决策和成员职业发展',
+        'experience.teamlead.task3': '协调利益相关方，对齐业务优先级、交付计划和技术需求',
+        'experience.teamlead.task4': '资源规划与风险管理，主动识别并解决阻塞问题',
+        'experience.teamlead.task5': '推动流程改进，提升团队效率和交付可预测性',
+
         'experience.ericsson.title': '软件开发工程师 JS5',
         'experience.ericsson.company': '爱立信西班牙 | 马德里',
         'experience.ericsson.date': '2021年7月 - 至今',

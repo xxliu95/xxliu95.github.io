@@ -209,8 +209,9 @@
     <script>
         (function () {
             var root = document.documentElement;
-            var maxSize = 200;
-            var minSize = 110;
+            var rootStyles = getComputedStyle(root);
+            var maxSize = parseFloat(rootStyles.getPropertyValue('--logo-size')) || 200;
+            var minSize = parseFloat(rootStyles.getPropertyValue('--logo-min-size')) || 110;
             var shrinkRange = 300;
             var form = document.getElementById('contact-form');
             var feedback = document.getElementById('form-feedback');

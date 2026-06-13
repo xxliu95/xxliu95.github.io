@@ -19,7 +19,12 @@
                 <a href="#" class="brand" aria-label="The Human Clarity">
                     <img src="img/marina_logo_blanco.png" alt="Logo The Human Clarity" class="brand__logo">
                 </a>
-                <nav class="site-nav" aria-label="Navegacion principal">
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu de navegacion">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="site-nav" id="site-nav" aria-label="Navegacion principal">
                     <a href="#sobre-mi">Sobre mi</a>
                     <a href="#servicios">Enfoque</a>
                     <a href="#proceso">Proceso</a>
@@ -129,7 +134,7 @@
     <footer class="footer" id="contacto">
         <div class="container footer__inner">
             <div class="footer__brand">
-                <img src="img/marina_logo.png" alt="Logo The Human Clarity" class="footer__logo">
+                <img src="img/marina_logo_blanco.png" alt="Logo The Human Clarity" class="footer__logo">
                 <p class="footer__brand-name">&copy; 2026 The Human Clarity</p>
                 <p class="footer__meta">Atención para adultos en modalidad presencial y online.</p>
                 <a href="mailto:marinamilantoni@hotmail.com">marinamilantoni@hotmail.com</a>
@@ -215,6 +220,8 @@
             var shrinkRange = 300;
             var form = document.getElementById('contact-form');
             var feedback = document.getElementById('form-feedback');
+            var menuToggle = document.querySelector('.menu-toggle');
+            var siteNav = document.getElementById('site-nav');
             var modal = document.getElementById('legal-modal');
             var legalTriggers = document.querySelectorAll('.legal-trigger');
             var legalContents = document.querySelectorAll('.legal-content');
@@ -280,6 +287,19 @@
                 }
             }
 
+            function closeMobileMenu() {
+                if (!siteNav || !menuToggle) return;
+                siteNav.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+
+            function toggleMobileMenu() {
+                if (!siteNav || !menuToggle) return;
+                var willOpen = !siteNav.classList.contains('is-open');
+                siteNav.classList.toggle('is-open', willOpen);
+                menuToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            }
+
             if (form) {
                 form.addEventListener('submit', function (event) {
                     event.preventDefault();
@@ -312,6 +332,24 @@
                 });
             });
 
+            if (menuToggle && siteNav) {
+                menuToggle.addEventListener('click', function () {
+                    toggleMobileMenu();
+                });
+
+                siteNav.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        closeMobileMenu();
+                    });
+                });
+
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth > 900) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+
             if (cookieAcceptBtn) {
                 cookieAcceptBtn.addEventListener('click', function () {
                     acceptCookieNotice();
@@ -333,6 +371,7 @@
             document.addEventListener('keydown', function (event) {
                 if (event.key === 'Escape') {
                     closeLegalModal();
+                    closeMobileMenu();
                 }
             });
 

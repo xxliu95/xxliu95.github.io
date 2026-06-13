@@ -1,6 +1,7 @@
 :root {
     --logo-size: 250px;
     --logo-min-size: 110px;
+    --anchor-offset: 128px;
     --bg: #f3eee7;
     --bg-soft: #fbf8f3;
     --text: #1d2a2a;
@@ -25,6 +26,15 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: var(--anchor-offset);
+}
+
+main section[id],
+footer[id] {
+    scroll-margin-top: var(--anchor-offset);
 }
 
 body {
@@ -103,7 +113,6 @@ body.modal-open {
     width: var(--logo-size);
     height: var(--logo-size);
     min-width: var(--logo-min-size);
-    min-height: var(--logo-min-size);
     object-fit: contain;
     transition: transform 220ms ease, width 140ms linear, height 140ms linear;
     filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));
@@ -117,6 +126,30 @@ body.modal-open {
     display: flex;
     align-items: center;
     gap: 2rem;
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid rgba(255, 246, 234, 0.6);
+    background: rgba(18, 39, 37, 0.45);
+    color: #fff;
+    border-radius: 10px;
+    width: 44px;
+    height: 40px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: #fff7eb;
 }
 
 .site-nav a {
@@ -525,11 +558,9 @@ th {
 }
 
 .footer__logo {
-    width: 58px;
-    height: 58px;
+    width: 200px;
+    height: auto;
     object-fit: contain;
-    background: rgba(255, 255, 255, 0.92);
-    border-radius: 50%;
     padding: 0.35rem;
     margin-bottom: 0.7rem;
 }
@@ -702,8 +733,14 @@ th {
 }
 
 @media (max-width: 900px) {
+    :root {
+    --logo-size: 250px;
+    --logo-min-size: 120px;
+    --anchor-offset: 112px;
+    }
+
     .hero {
-        min-height: 68vh;
+        min-height: 80vh;
     }
 
     .features {
@@ -742,29 +779,64 @@ th {
     }
 
     .site-header__inner {
-        min-height: 100px;
+        min-height: 84px;
         flex-wrap: wrap;
-        padding: 0.5rem 0;
+        justify-content: space-between;
+        gap: 0.55rem;
+        padding: 0.45rem 0 0.25rem;
+    }
+
+    .brand {
+        width: auto;
+        max-width: calc(100% - 56px);
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        border: none;
+        background: transparent;
     }
 
     .site-nav {
         width: 100%;
-        overflow-x: auto;
-        padding-bottom: 0.3rem;
-        gap: 1.3rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: max-height 220ms ease, opacity 180ms ease, padding 180ms ease;
+    }
+
+    .site-nav.is-open {
+        max-height: 280px;
+        opacity: 1;
+        pointer-events: auto;
+        margin-top: 0.2rem;
+        padding: 0.7rem 0.8rem;
+        border-radius: 14px;
+        background: rgba(11, 25, 24, 0.72);
+        border: 1px solid rgba(255, 246, 234, 0.2);
+        backdrop-filter: blur(4px);
     }
 
     .site-nav a {
         white-space: nowrap;
+        font-size: 0.9rem;
+        letter-spacing: 0.03em;
+        opacity: 0.95;
     }
 
     .brand__logo {
-        width: var(--logo-size);
-        height: var(--logo-size);
+        width: min(62vw, var(--logo-size));
+        height: auto;
     }
 
     .hero__content {
-        padding-top: 13rem;
+        padding-top: 11.2rem;
+        padding-bottom: 4.2rem;
     }
 
     .process__steps {

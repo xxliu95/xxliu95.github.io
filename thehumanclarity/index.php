@@ -248,6 +248,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
         </div>
+        <div class="footer__bottom">
+            <p class="footer__dev">Desarrollado por <a href="https://xxliu95.github.io" target="_blank" rel="noopener">xxliu95</a></p>
+        </div>
     </footer>
 
     <section id="cookie-consent" class="cookie-consent" hidden aria-live="polite">

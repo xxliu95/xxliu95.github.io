@@ -44,7 +44,7 @@ if (!empty($errors)) {
     exit;
 }
 
-$to = 'xxliu95@gmail.com';
+$to = 'marinamilantoni@hotmail.com';
 $subject = 'Nuevo mensaje desde thehumanclarity.com';
 $safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
 $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');

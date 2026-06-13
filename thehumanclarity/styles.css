@@ -647,26 +647,23 @@ th {
     color: #fff2df;
 }
 
-.footer__links-group {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+.footer__legal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 200px;
 }
 
-.footer__col {
-    min-width: 0;
-}
-
-.footer__links-group h3 {
+.footer__legal h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.35rem;
     color: #fff9ef;
 }
 
-.footer__links-group a {
+.footer__legal a {
     display: block;
     margin-bottom: 0.36rem;
+    font-size: 0.95rem;
 }
 
 .legal-trigger {
@@ -832,6 +829,15 @@ th {
         gap: 0.75rem;
     }
 
+    .faq {
+        padding: 0.4rem 0 2rem;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
     .process {
         padding: 1.5rem 0 2.5rem;
     }
@@ -864,19 +870,18 @@ th {
         flex-direction: column;
         justify-content: flex-start;
         padding: 0.8rem 0;
+        gap: 1.5rem;
     }
 
-    .footer__links-group {
+    .footer__legal {
         width: 100%;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.6rem;
     }
 
-    .footer__links-group h3 {
+    .footer__legal h3 {
         font-size: 1.05rem;
     }
 
-    .footer__links-group a {
+    .footer__legal a {
         font-size: 0.88rem;
     }
 

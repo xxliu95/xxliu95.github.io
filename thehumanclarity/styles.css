@@ -65,7 +65,7 @@ body.modal-open {
     overflow: hidden;
     background:
         linear-gradient(114deg, rgba(14, 31, 31, 0.72), rgba(27, 59, 54, 0.55)),
-        url("img/banner.jpg") center / cover no-repeat;
+        url("img/banner.jpg") left / cover no-repeat;
 }
 
 .hero__overlay {

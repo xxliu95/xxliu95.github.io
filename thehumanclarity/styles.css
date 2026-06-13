@@ -1,5 +1,5 @@
 :root {
-    --logo-size: 300px;
+    --logo-size: 250px;
     --logo-min-size: 110px;
     --bg: #f3eee7;
     --bg-soft: #fbf8f3;
@@ -101,8 +101,9 @@ body.modal-open {
 
 .brand__logo {
     width: var(--logo-size);
-    height: auto;
+    height: var(--logo-size);
     min-width: var(--logo-min-size);
+    min-height: var(--logo-min-size);
     object-fit: contain;
     transition: transform 220ms ease, width 140ms linear, height 140ms linear;
     filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));

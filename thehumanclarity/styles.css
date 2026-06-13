@@ -91,6 +91,7 @@ body.modal-open {
     width: 100%;
     z-index: 30;
     background: linear-gradient(180deg, rgba(20, 40, 30, var(--header-bg-opacity)) 0%, transparent 100%);
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
 }
 
@@ -112,10 +113,10 @@ body.modal-open {
 
 .brand__logo {
     width: var(--logo-size);
-    height: var(--logo-size);
+    height: auto;
     min-width: var(--logo-min-size);
     object-fit: contain;
-    transition: transform 220ms ease, width 140ms linear, height 140ms linear;
+    transition: transform 220ms ease, width 140ms linear;
     filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));
 }
 
@@ -268,6 +269,7 @@ h1 {
     color: #fff;
     border-color: rgba(255, 255, 255, 0.85);
     background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
 }
 
@@ -729,6 +731,7 @@ th {
     bottom: 0;
     z-index: 0;
     background: rgba(8, 18, 17, 0.62);
+    -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
 }
 
@@ -936,6 +939,7 @@ th {
         border-radius: 14px;
         background: rgba(11, 25, 24, 0.82);
         border: 1px solid rgba(255, 246, 234, 0.2);
+        -webkit-backdrop-filter: blur(6px);
         backdrop-filter: blur(6px);
     }
 

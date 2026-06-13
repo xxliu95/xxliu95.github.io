@@ -185,7 +185,7 @@
     <div id="legal-modal" class="legal-modal" hidden>
         <div class="legal-modal__backdrop" data-close-modal="true"></div>
         <div class="legal-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
-            <button type="button" class="legal-modal__close" data-close-modal="true" data-i18n="legal-close" aria-label="Cerrar">&times;</button>
+            <button type="button" class="legal-modal__close" data-close-modal="true" data-i18n-aria="legal-close" aria-label="Cerrar">&times;</button>
 
             <article class="legal-content" data-legal-content="aviso" hidden>
                 <h2 id="legal-modal-title" data-i18n="legal-terms-title">Aviso legal y términos</h2>
@@ -405,6 +405,13 @@
                     var key = el.getAttribute('data-i18n');
                     if (translations[lang] && translations[lang][key]) {
                         el.innerHTML = translations[lang][key];
+                    }
+                });
+
+                document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+                    var ariaKey = el.getAttribute('data-i18n-aria');
+                    if (translations[lang] && translations[lang][ariaKey]) {
+                        el.setAttribute('aria-label', translations[lang][ariaKey]);
                     }
                 });
             }

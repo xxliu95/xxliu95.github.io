@@ -7,9 +7,9 @@
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
     <link rel="icon" href="public/favicon.ico" type="image/x-icon">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/tools.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="js/translations.js"></script>
@@ -17,6 +17,7 @@
     <title>Tools - Xinxin Liu</title>
 </head>
 <body class="bg-transparent">
+
 <div id="header-placeholder"></div>
 <script>
     fetch('header.html')
@@ -24,17 +25,18 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             document.querySelectorAll('.nav-item')[1].classList.add('active');
+            document.dispatchEvent(new Event('headerLoaded'));
         });
 </script>
 
-<div class="container" style="margin-top: 5em">
+<div class="container tools-page">
     <div class="row d-flex justify-content-center p-4">
-        <h1 class="text-white" style="text-shadow: 2px 2px 6px #111111" data-translate="tools.title">Herramientas</h1>
+        <h1 class="tools-page-title text-center reveal" data-translate="tools.title">Herramientas</h1>
     </div>
     
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
-            <div class="card mb-4 shadow tool-card">
+            <div class="card mb-4 shadow tool-card reveal">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3" data-translate="tools.numero.title">Número a letras</h3>
                     <p class="card-text" data-translate="tools.numero.description">Convierte números a su representación en letras en español. Soporta números enteros y decimales.</p>
@@ -42,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card">
+            <div class="card mb-4 shadow tool-card reveal reveal-delay-1">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3" data-translate="tools.qr.title">Generador de Código QR</h3>
                     <p class="card-text" data-translate="tools.qr.description">Genera códigos QR personalizados a partir de texto, URLs o cualquier información.</p>
@@ -50,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card">
+            <div class="card mb-4 shadow tool-card reveal reveal-delay-2">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3" data-translate="tools.color.title"></i>Generador de Paleta de Colores</h3>
                     <p class="card-text" data-translate="tools.color.description">Genera paletas de colores armoniosas con códigos hexadecimales para tus proyectos.</p>
@@ -58,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card">
+            <div class="card mb-4 shadow tool-card reveal reveal-delay-3">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3" data-translate="tools.unit.title"></i>Conversor de Unidades</h3>
                     <p class="card-text" data-translate="tools.unit.description">Convierte entre diferentes unidades de longitud, peso y temperatura.</p>
@@ -66,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card">
+            <div class="card mb-4 shadow tool-card reveal">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3" data-translate="tools.word.title">Contador de Palabras</h3>
                     <p class="card-text" data-translate="tools.word.description">Cuenta palabras, caracteres, líneas y proporciona estadísticas de texto.</p>
@@ -74,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card">
+            <div class="card mb-4 shadow tool-card reveal reveal-delay-1">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3" data-translate="tools.json.title">Formateador JSON</h3>
                     <p class="card-text" data-translate="tools.json.description">Formatea, valida y embellece código JSON de manera rápida y sencilla.</p>
@@ -163,7 +165,7 @@
                 <form id="unitForm" class="styled-form">
                     <div class="mb-4">
                         <label for="unitType" data-translate="tools.unit.modal.type">Tipo de conversión</label>
-                        <select id="unitType" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
+                        <select id="unitType" class="form-select">
                             <option value="length" data-translate="tools.unit.modal.type.length">Longitud</option>
                             <option value="weight" data-translate="tools.unit.modal.type.weight">Peso</option>
                             <option value="temperature" data-translate="tools.unit.modal.type.temperature">Temperatura</option>
@@ -172,12 +174,12 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="unitFrom" data-translate="tools.unit.modal.from">De</label>
-                            <select id="unitFrom" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
+                            <select id="unitFrom" class="form-select">
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="unitTo" data-translate="tools.unit.modal.to">A</label>
-                            <select id="unitTo" class="form-select" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem;">
+                            <select id="unitTo" class="form-select">
                             </select>
                         </div>
                     </div>
@@ -204,7 +206,7 @@
                 <div class="styled-form">
                     <div class="mb-4">
                         <label for="textInput" data-translate="tools.word.modal.label">Texto</label>
-                        <textarea id="textInput" rows="8" placeholder="Escribe o pega tu texto aquí..." data-translate="tools.word.modal.placeholder" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem; resize: vertical;"></textarea>
+                        <textarea id="textInput" rows="8" placeholder="Escribe o pega tu texto aquí..." data-translate="tools.word.modal.placeholder"></textarea>
                     </div>
                 </div>
                 <div id="wordStats"></div>
@@ -225,7 +227,7 @@
                 <div class="styled-form">
                     <div class="mb-4">
                         <label for="jsonInput" data-translate="tools.json.modal.label">JSON sin formatear</label>
-                        <textarea id="jsonInput" rows="8" placeholder='{"ejemplo": "Pega tu JSON aquí"}' data-translate="tools.json.modal.placeholder" style="background: #f9fafb; border: 2px solid #d1d5db; color: #111827; padding: 0.75rem 1rem; border-radius: 8px; width: 100%; font-size: 1rem; font-family: monospace; resize: vertical;"></textarea>
+                        <textarea id="jsonInput" rows="8" placeholder='{"ejemplo": "Pega tu JSON aquí"}' data-translate="tools.json.modal.placeholder"></textarea>
                     </div>
                     <div class="d-flex gap-2 mb-4">
                         <button id="formatJSON" class="text-white btn-convert flex-fill" style="margin-right: 0.5rem;" data-translate="tools.json.modal.format">Formatear</button>
@@ -628,5 +630,6 @@ document.getElementById('minifyJSON').addEventListener('click', function() {
         });
 </script>
 <script src="js/init-translations.js"></script>
+<script src="js/animations.js"></script>
 </body>
 </html>

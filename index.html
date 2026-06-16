@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
     <link rel="icon" href="public/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/portfolio.css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/portfolio.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -30,7 +30,7 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
             document.querySelectorAll('.nav-item')[0].classList.add('active');
-            // Trigger translations after header is loaded
+            document.dispatchEvent(new Event('headerLoaded'));
             if (typeof window.initTranslations === 'function') {
                 window.initTranslations();
             }
@@ -60,7 +60,7 @@
 <!-- About Me Section -->
 <section class="section">
     <div class="container">
-        <div class="section-card">
+        <div class="section-card reveal">
             <h2 class="section-title" data-translate="about.title">About Me</h2>
             <p class="section-content" data-translate="about.content">
                 I am a software engineer with LTE and 5G development experience. I have a proven ability to quickly learn and adapt to new technologies.
@@ -74,9 +74,9 @@
 <!-- Experience Section -->
 <section class="section section-alt">
     <div class="container">
-        <h2 class="section-title-main" data-translate="experience.title">Experience</h2>
+        <h2 class="section-title-main reveal" data-translate="experience.title">Experience</h2>
         
-        <div class="timeline-item">
+        <div class="timeline-item reveal">
             <div class="timeline-badge"><i class="fas fa-users-gear"></i></div>
             <div class="timeline-content">
                 <h3 class="timeline-title" data-translate="experience.teamlead.title">Software Development Team Leader</h3>
@@ -95,7 +95,7 @@
             </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item reveal reveal-delay-1">
             <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
             <div class="timeline-content">
                 <h3 class="timeline-title" data-translate="experience.ericsson.title">Software Development Engineer JS5</h3>
@@ -115,7 +115,7 @@
             </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item reveal reveal-delay-2">
             <div class="timeline-badge"><i class="fas fa-rocket"></i></div>
             <div class="timeline-content">
                 <h3 class="timeline-title" data-translate="experience.freelance.title">Full-stack Developer</h3>
@@ -130,7 +130,7 @@
             </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item reveal reveal-delay-3">
             <div class="timeline-badge"><i class="fas fa-flask"></i></div>
             <div class="timeline-content">
                 <h3 class="timeline-title" data-translate="experience.intern.title">R&D Software Development Engineer Intern</h3>
@@ -147,24 +147,24 @@
 <!-- Education Section -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title-main" data-translate="education.title">Education</h2>
+        <h2 class="section-title-main reveal" data-translate="education.title">Education</h2>
         
         <div class="education-grid">
-            <div class="education-card">
+            <div class="education-card reveal">
                 <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
                 <h3 class="education-degree" data-translate="education.meng.degree">MEng in Telecommunication Engineering</h3>
                 <p class="education-school" data-translate="education.meng.school">Universidad Politécnica de Madrid | Spain</p>
                 <p class="education-date" data-translate="education.meng.date">September 2019 – July 2021</p>
             </div>
 
-            <div class="education-card">
+            <div class="education-card reveal reveal-delay-1">
                 <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
                 <h3 class="education-degree" data-translate="education.beng.degree">BEng in Telecommunication Technologies and Services Engineering</h3>
                 <p class="education-school" data-translate="education.beng.school">Universidad Politécnica de Madrid | Spain</p>
                 <p class="education-date" data-translate="education.beng.date">September 2015 – July 2019</p>
             </div>
 
-            <div class="education-card">
+            <div class="education-card reveal reveal-delay-2">
                 <div class="education-icon"><i class="fas fa-globe"></i></div>
                 <h3 class="education-degree" data-translate="education.tsinghua.degree">Visiting Research Student - Computer Science</h3>
                 <p class="education-school" data-translate="education.tsinghua.school">Tsinghua University | China</p>
@@ -177,10 +177,10 @@
 <!-- Courses Section -->
 <section class="section section-alt">
     <div class="container">
-        <h2 class="section-title-main" data-translate="courses.title">Courses & Certifications</h2>
+        <h2 class="section-title-main reveal" data-translate="courses.title">Courses & Certifications</h2>
         
         <div class="courses-grid">
-            <div class="course-item">
+            <div class="course-item reveal">
                 <div class="course-icon"><i class="fas fa-book"></i></div>
                 <div>
                     <h4 class="course-name" data-translate="courses.cloud.name">Cloud Native Engineering Fundamentals</h4>
@@ -188,7 +188,7 @@
                 </div>
             </div>
 
-            <div class="course-item">
+            <div class="course-item reveal reveal-delay-1">
                 <div class="course-icon"><i class="fas fa-book"></i></div>
                 <div>
                     <h4 class="course-name" data-translate="courses.redis.name">Redis In-memory Data Store</h4>
@@ -196,7 +196,7 @@
                 </div>
             </div>
 
-            <div class="course-item">
+            <div class="course-item reveal reveal-delay-2">
                 <div class="course-icon"><i class="fas fa-book"></i></div>
                 <div>
                     <h4 class="course-name" data-translate="courses.docker.name">Docker intro + Kubernetes & Helm admin</h4>
@@ -204,7 +204,7 @@
                 </div>
             </div>
 
-            <div class="course-item">
+            <div class="course-item reveal reveal-delay-3">
                 <div class="course-icon"><i class="fas fa-book"></i></div>
                 <div>
                     <h4 class="course-name" data-translate="courses.go.name">Go Language</h4>
@@ -218,10 +218,10 @@
 <!-- Skills Section -->
 <section class="section">
     <div class="container">
-        <h2 class="section-title-main" data-translate="skills.title">Skills</h2>
+        <h2 class="section-title-main reveal" data-translate="skills.title">Skills</h2>
         
         <div class="skills-grid">
-            <div class="skill-category">
+            <div class="skill-category reveal">
                 <h3 class="skill-category-title" data-translate="skills.languages.title"><i class="fas fa-comments"></i> Languages</h3>
                 <div class="skill-tags">
                     <span class="skill-tag" data-translate="skills.languages.chinese">Chinese (Native)</span>
@@ -230,7 +230,7 @@
                 </div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category reveal reveal-delay-1">
                 <h3 class="skill-category-title" data-translate="skills.programming.title"><i class="fas fa-laptop-code"></i> Programming</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">C/C++</span>
@@ -242,7 +242,7 @@
                 </div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category reveal reveal-delay-2">
                 <h3 class="skill-category-title" data-translate="skills.technologies.title"><i class="fas fa-tools"></i> Tools & Technologies</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Docker</span>
@@ -254,7 +254,7 @@
                 </div>
             </div>
 
-            <div class="skill-category">
+            <div class="skill-category reveal reveal-delay-3">
                 <h3 class="skill-category-title" data-translate="skills.soft.title"><i class="fas fa-handshake"></i> Soft Skills</h3>
                 <div class="skill-tags">
                     <span class="skill-tag" data-translate="skills.soft.agile">Agile Teamwork</span>
@@ -277,6 +277,7 @@
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/animations.js"></script>
 <script src="js/init-translations.js"></script>
 </body>
 </html>

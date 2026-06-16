@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero-section {
-    padding: 6rem 0 4rem;
+    padding: 5rem 0 4rem;
     margin: 0;
 }
 
@@ -8,20 +8,21 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border: 5px solid #ff7a00;
+    border: 4px solid #ff7a00;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    color: #f3f4f6;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    color: #ff7a00;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--accent);
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
@@ -33,21 +34,22 @@
 }
 
 .contact-link {
-    color: #d1d5db;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
 .contact-link i {
-    font-size: 1.1rem;
+    color: var(--accent);
 }
 
 .contact-link:hover {
-    color: #ff7a00;
+    color: var(--accent);
+    text-decoration: none;
 }
 
 /* Section Styles */
@@ -62,23 +64,23 @@
 }
 
 .section-card {
-    background: rgba(55, 65, 81, 0.9);
+    background: var(--card-bg);
     padding: 2.5rem;
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .section-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #f3f4f6;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
 .section-title-main {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 700;
-    color: #f3f4f6;
+    color: var(--text-primary);
     margin-bottom: 3rem;
     text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -87,10 +89,10 @@
 .section-content {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #d1d5db;
+    color: var(--text-secondary);
 }
 
-/* Timeline Styles */
+/* Timeline */
 .timeline-item {
     display: flex;
     gap: 2rem;
@@ -109,7 +111,7 @@
     top: 60px;
     width: 2px;
     height: calc(100% + 1rem);
-    background: #e5e7eb;
+    background: #6b7280;
 }
 
 .timeline-badge {
@@ -122,47 +124,47 @@
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.35);
     color: white;
+    z-index: 1;
 }
 
 .timeline-content {
     flex: 1;
-    background: rgba(55, 65, 81, 0.9);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .timeline-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #f3f4f6;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .timeline-company {
     font-size: 1.1rem;
-    color: #ff7a00;
+    color: var(--accent);
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
 .timeline-date {
     font-size: 0.95rem;
-    color: #9ca3af;
+    color: var(--text-muted);
     margin-bottom: 1rem;
 }
 
 .timeline-description {
     font-size: 1rem;
-    color: #d1d5db;
+    color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 1rem;
 }
@@ -173,12 +175,20 @@
 }
 
 .timeline-list li {
-    color: #d1d5db;
+    color: var(--text-secondary);
     margin-bottom: 0.5rem;
     line-height: 1.6;
 }
 
-/* Education Grid */
+.timeline-content a {
+    color: #ff9a40;
+}
+
+.timeline-content a:hover {
+    color: var(--accent);
+}
+
+/* Education */
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,45 +196,45 @@
 }
 
 .education-card {
-    background: rgba(55, 65, 81, 0.9);
+    background: var(--card-bg);
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
 }
 
 .education-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .education-icon {
     font-size: 3rem;
-    color: #ff7a00;
+    color: var(--accent);
     margin-bottom: 1rem;
 }
 
 .education-degree {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #f3f4f6;
+    color: var(--text-primary);
     margin-bottom: 0.75rem;
 }
 
 .education-school {
     font-size: 1rem;
-    color: #ff7a00;
+    color: var(--accent);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .education-date {
     font-size: 0.9rem;
-    color: #9ca3af;
+    color: var(--text-muted);
 }
 
-/* Courses Grid */
+/* Courses */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -232,41 +242,41 @@
 }
 
 .course-item {
-    background: rgba(55, 65, 81, 0.9);
+    background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     display: flex;
     gap: 1rem;
     align-items: start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .course-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .course-icon {
     font-size: 1.75rem;
     flex-shrink: 0;
-    color: #ff7a00;
+    color: var(--accent);
 }
 
 .course-name {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #f3f4f6;
+    color: var(--text-primary);
     margin-bottom: 0.25rem;
 }
 
 .course-provider {
     font-size: 0.9rem;
-    color: #9ca3af;
+    color: var(--text-muted);
     margin: 0;
 }
 
-/* Skills Section */
+/* Skills */
 .skills-grid {
     display: flex;
     flex-direction: column;
@@ -274,7 +284,7 @@
 }
 
 .skill-category {
-    background: rgba(55, 65, 81, 0.9);
+    background: var(--card-bg);
     padding: 1.5rem 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -283,7 +293,7 @@
 .skill-category-title {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #f3f4f6;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -291,7 +301,7 @@
 }
 
 .skill-category-title i {
-    color: #ff7a00;
+    color: var(--accent);
     font-size: 1.3rem;
 }
 
@@ -308,28 +318,20 @@
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: all 0.3s ease;
     border: 1px solid rgba(255, 122, 0, 0.45);
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .skill-tag:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.35);
     background: #ff7a00;
     color: white;
 }
 
-/* Footer Styles */
+/* Footer social (legacy) */
 .footer-section {
     background: #111827;
     padding: 2.5rem 0;
-    color: #9ca3af;
-    margin-top: 0;
-}
-
-.footer-text {
-    margin: 0;
-    font-size: 0.95rem;
+    color: var(--text-muted);
 }
 
 .footer-social {
@@ -345,35 +347,24 @@
 }
 
 .footer-link {
-    color: #9ca3af;
+    color: var(--text-muted);
     font-size: 1.5rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(156, 163, 175, 0.1);
+    transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-    color: #ff7a00;
-    background: rgba(255, 122, 0, 0.15);
-    transform: translateY(-3px);
+    color: var(--accent);
     text-decoration: none;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 991px) {
     .hero-title {
-        font-size: 2.5rem;
         margin-top: 2rem;
         text-align: center;
     }
 
     .hero-subtitle {
-        font-size: 1.25rem;
         text-align: center;
     }
 
@@ -390,15 +381,11 @@
     .timeline-badge {
         width: 40px;
         height: 40px;
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .timeline-item:not(:last-child)::after {
         left: 19px;
-    }
-
-    .section-title-main {
-        font-size: 2rem;
     }
 }
 
@@ -413,29 +400,17 @@
         height: 150px;
     }
 
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
     .section {
         padding: 3rem 0;
     }
 
-    .section-card {
-        padding: 1.5rem;
-    }
-
+    .section-card,
     .timeline-content {
         padding: 1.5rem;
     }
 
     .education-grid,
-    .courses-grid,
-    .skills-grid {
+    .courses-grid {
         grid-template-columns: 1fr;
     }
 }

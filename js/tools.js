@@ -422,11 +422,13 @@
         var el = mount && mount.querySelector('canvas, svg');
         if (!el) return;
         var hostW = mount.clientWidth || 280;
-        var maxPreview = Math.min(hostW, 340);
+        var narrow = window.matchMedia('(max-width: 575px)').matches;
+        var maxPreview = Math.min(hostW, narrow ? 196 : 340);
+        var minDisplay = narrow ? 128 : 150;
         var t = (exportSize - 200) / 280; // 200→0, 480→1
         if (t < 0) t = 0;
         if (t > 1) t = 1;
-        var display = Math.round(150 + t * (maxPreview - 150));
+        var display = Math.round(minDisplay + t * (maxPreview - minDisplay));
         el.style.width = display + 'px';
         el.style.height = display + 'px';
     }

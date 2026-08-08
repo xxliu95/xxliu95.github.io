@@ -64,17 +64,27 @@ const translations = {
         
         // Courses Section
         'courses.title': 'Cursos y Certificaciones',
-        'courses.cloud.name': 'Fundamentos de Ingeniería Cloud Native',
-        'courses.cloud.provider': 'Ericsson | Septiembre 2023',
-        
-        'courses.redis.name': 'Almacenamiento de Datos en Memoria Redis',
-        'courses.redis.provider': 'Skillsoft | Mayo 2024',
-        
-        'courses.docker.name': 'Introducción a Docker + administración de Kubernetes y Helm',
-        'courses.docker.provider': 'Component Soft | Agosto 2024',
-        
+        'courses.llm.name': 'Generative AI LLM Fundamental 2026',
+        'courses.llm.provider': 'Ericsson | Julio 2026',
+        'courses.prompt.name': 'Prompt Engineering badge - Fundamental level Assessment 2026',
+        'courses.prompt.provider': 'Ericsson | Junio 2026',
+        'courses.playground.name': 'Fundamentals of the Generative AI Playground 2025',
+        'courses.playground.provider': 'Ericsson | Julio 2025',
+        'courses.automation.name': 'BCSS - CNE Fundamental Automation assessment',
+        'courses.automation.provider': 'Ericsson | Noviembre 2024',
         'courses.go.name': 'Lenguaje Go',
         'courses.go.provider': 'Ericsson & Universidad Carlos III | Octubre 2024',
+        'courses.docker.name': 'Introducción a Docker + administración de Kubernetes y Helm',
+        'courses.docker.provider': 'Component Soft | Agosto 2024',
+        'courses.redis.name': 'Almacenamiento de Datos en Memoria Redis',
+        'courses.redis.provider': 'Skillsoft | Mayo 2024',
+        'courses.cloud.name': 'Cloud Native Fundamental',
+        'courses.cloud.provider': 'Ericsson | Septiembre 2023',
+
+        'contact.email': 'Email',
+        'contact.github': 'GitHub',
+        'contact.linkedin': 'LinkedIn',
+        'contact.phone': 'Teléfono',
         
         // Skills Section
         'skills.title': 'Habilidades',
@@ -294,17 +304,27 @@ const translations = {
         
         // Courses Section
         'courses.title': 'Courses & Certifications',
-        'courses.cloud.name': 'Cloud Native Engineering Fundamentals',
-        'courses.cloud.provider': 'Ericsson | September 2023',
-        
-        'courses.redis.name': 'Redis In-memory Data Store',
-        'courses.redis.provider': 'Skillsoft | May 2024',
-        
-        'courses.docker.name': 'Docker intro + Kubernetes & Helm admin',
-        'courses.docker.provider': 'Component Soft | August 2024',
-        
+        'courses.llm.name': 'Generative AI LLM Fundamental 2026',
+        'courses.llm.provider': 'Ericsson | July 2026',
+        'courses.prompt.name': 'Prompt Engineering badge - Fundamental level Assessment 2026',
+        'courses.prompt.provider': 'Ericsson | June 2026',
+        'courses.playground.name': 'Fundamentals of the Generative AI Playground 2025',
+        'courses.playground.provider': 'Ericsson | July 2025',
+        'courses.automation.name': 'BCSS - CNE Fundamental Automation assessment',
+        'courses.automation.provider': 'Ericsson | November 2024',
         'courses.go.name': 'Go Language',
         'courses.go.provider': 'Ericsson & Universidad Carlos III | October 2024',
+        'courses.docker.name': 'Docker intro + Kubernetes & Helm admin',
+        'courses.docker.provider': 'Component Soft | August 2024',
+        'courses.redis.name': 'Redis In-memory Data Store',
+        'courses.redis.provider': 'Skillsoft | May 2024',
+        'courses.cloud.name': 'Cloud Native Fundamental',
+        'courses.cloud.provider': 'Ericsson | September 2023',
+
+        'contact.email': 'Email',
+        'contact.github': 'GitHub',
+        'contact.linkedin': 'LinkedIn',
+        'contact.phone': 'Phone',
         
         // Skills Section
         'skills.title': 'Skills',
@@ -524,17 +544,27 @@ const translations = {
         
         // Courses Section
         'courses.title': '课程与认证',
-        'courses.cloud.name': '云原生工程基础',
-        'courses.cloud.provider': '爱立信 | 2023年9月',
-        
-        'courses.redis.name': 'Redis内存数据存储',
-        'courses.redis.provider': 'Skillsoft | 2024年5月',
-        
-        'courses.docker.name': 'Docker入门 + Kubernetes & Helm管理',
-        'courses.docker.provider': 'Component Soft | 2024年8月',
-        
+        'courses.llm.name': 'Generative AI LLM Fundamental 2026',
+        'courses.llm.provider': '爱立信 | 2026年7月',
+        'courses.prompt.name': 'Prompt Engineering badge - Fundamental level Assessment 2026',
+        'courses.prompt.provider': '爱立信 | 2026年6月',
+        'courses.playground.name': 'Fundamentals of the Generative AI Playground 2025',
+        'courses.playground.provider': '爱立信 | 2025年7月',
+        'courses.automation.name': 'BCSS - CNE Fundamental Automation assessment',
+        'courses.automation.provider': '爱立信 | 2024年11月',
         'courses.go.name': 'Go语言',
         'courses.go.provider': '爱立信 & 卡洛斯三世大学 | 2024年10月',
+        'courses.docker.name': 'Docker入门 + Kubernetes & Helm管理',
+        'courses.docker.provider': 'Component Soft | 2024年8月',
+        'courses.redis.name': 'Redis内存数据存储',
+        'courses.redis.provider': 'Skillsoft | 2024年5月',
+        'courses.cloud.name': 'Cloud Native Fundamental',
+        'courses.cloud.provider': '爱立信 | 2023年9月',
+
+        'contact.email': '邮箱',
+        'contact.github': 'GitHub',
+        'contact.linkedin': 'LinkedIn',
+        'contact.phone': '电话',
         
         // Skills Section
         'skills.title': '技能',

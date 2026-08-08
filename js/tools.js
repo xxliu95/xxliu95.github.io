@@ -128,10 +128,8 @@
     /* -------- QR with styling -------- */
     var qrInstance = null;
     var qrExportCanvas = null;
-    var QR_DEFAULT_LOGO = 'public/qr-default-logo.png';
     var QR_MAX_CHARS = 1200;
-    var qrLogoDataUrl = QR_DEFAULT_LOGO;
-    var qrUsingDefaultLogo = true;
+    var qrLogoDataUrl = '';
     var qrBakedLogo = null; // { src, bg, dataUrl }
     var qrBuildToken = 0;
     var qrPreviewTimer = null;
@@ -161,7 +159,6 @@
     function updateQrLogoThumb() {
         var thumb = document.getElementById('qrLogoThumb');
         var clearBtn = document.getElementById('clearQrLogo');
-        var resetBtn = document.getElementById('resetQrLogo');
         var options = document.getElementById('qrLogoOptions');
         var hasLogo = !!qrLogoDataUrl;
 
@@ -176,24 +173,10 @@
         }
         if (options) options.style.display = hasLogo ? '' : 'none';
         if (clearBtn) clearBtn.style.display = hasLogo ? 'inline-flex' : 'none';
-        if (resetBtn) {
-            // Show when logo removed, or when using a custom upload
-            resetBtn.style.display = (!hasLogo || !qrUsingDefaultLogo) ? 'inline-flex' : 'none';
-        }
-    }
-
-    function setDefaultQrLogo() {
-        qrLogoDataUrl = QR_DEFAULT_LOGO;
-        qrUsingDefaultLogo = true;
-        qrBakedLogo = null;
-        var fileInput = document.getElementById('qrLogoFile');
-        if (fileInput) fileInput.value = '';
-        updateQrLogoThumb();
     }
 
     function clearQrLogo() {
         qrLogoDataUrl = '';
-        qrUsingDefaultLogo = false;
         qrBakedLogo = null;
         var fileInput = document.getElementById('qrLogoFile');
         if (fileInput) fileInput.value = '';
@@ -643,7 +626,6 @@
                 reader.onload = function () {
                     cropImageToSquare(reader.result, function (cropped) {
                         qrLogoDataUrl = cropped || reader.result;
-                        qrUsingDefaultLogo = false;
                         qrBakedLogo = null;
                         updateQrLogoThumb();
                         scheduleQrPreview();
@@ -662,14 +644,6 @@
 
         var clearQrLogoBtn = document.getElementById('clearQrLogo');
         if (clearQrLogoBtn) clearQrLogoBtn.addEventListener('click', clearQrLogo);
-
-        var resetQrLogoBtn = document.getElementById('resetQrLogo');
-        if (resetQrLogoBtn) {
-            resetQrLogoBtn.addEventListener('click', function () {
-                setDefaultQrLogo();
-                scheduleQrPreview();
-            });
-        }
 
         var downloadBtn = document.getElementById('downloadQR');
         if (downloadBtn) {
@@ -704,8 +678,7 @@
         var qrModal = document.getElementById('qrModal');
         if (qrModal) {
             qrModal.addEventListener('shown.bs.modal', function () {
-                if (!qrLogoDataUrl && qrUsingDefaultLogo) setDefaultQrLogo();
-                else updateQrLogoThumb();
+                updateQrLogoThumb();
                 scheduleQrPreview();
                 if (qrText) qrText.focus();
             });
@@ -714,7 +687,10 @@
                 clearTimeout(qrPreviewTimer);
                 qrBakedLogo = null;
                 resetQrPickerDefaults();
-                setDefaultQrLogo();
+                qrLogoDataUrl = '';
+                var fileInput = document.getElementById('qrLogoFile');
+                if (fileInput) fileInput.value = '';
+                updateQrLogoThumb();
                 clearQrPreview();
             });
         }

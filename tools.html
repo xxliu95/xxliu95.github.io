@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
     <link rel="icon" href="public/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/tools.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
     <script src="js/translations.js"></script>
-    
+
     <title>Tools - Xinxin Liu</title>
 </head>
 <body class="bg-transparent">
 
 <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress__bar"></span></div>
-<div class="ambient" aria-hidden="true">
-    <div class="ambient__orb ambient__orb--1"></div>
-    <div class="ambient__orb ambient__orb--2"></div>
-    <div class="ambient__orb ambient__orb--3"></div>
-</div>
 
 <div id="header-placeholder"></div>
 <script>
@@ -41,70 +36,97 @@
 </script>
 
 <div class="container tools-page">
-    <div class="row d-flex justify-content-center p-4">
-        <h1 class="tools-page-title text-center reveal" data-translate="tools.title">Herramientas</h1>
+    <div class="tools-page-header reveal">
+        <h1 class="tools-page-title" data-translate="tools.title">Herramientas</h1>
+        <p class="tools-page-lead" data-translate="tools.lead">Utilidades rápidas para el día a día</p>
     </div>
-    
+
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
             <div class="card mb-4 shadow tool-card reveal">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3" data-translate="tools.numero.title">Número a letras</h3>
-                    <p class="card-text" data-translate="tools.numero.description">Convierte números a su representación en letras en español. Soporta números enteros y decimales.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#numeroModal" data-translate="tools.numero.button">Abrir herramienta</button>
+                    <h3 class="card-title mb-3"><i class="fas fa-qrcode" aria-hidden="true"></i><span data-translate="tools.qr.title">Generador de Código QR</span></h3>
+                    <p class="card-text" data-translate="tools.qr.description">QR personalizable: estilo, colores, tamaño, margen e icono central.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#qrModal" data-translate="tools.common.open">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card reveal reveal-delay-1">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3" data-translate="tools.qr.title">Generador de Código QR</h3>
-                    <p class="card-text" data-translate="tools.qr.description">Genera códigos QR personalizados a partir de texto, URLs o cualquier información.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#qrModal" data-translate="tools.qr.button">Abrir herramienta</button>
+                    <h3 class="card-title mb-3"><i class="fas fa-spell-check" aria-hidden="true"></i><span data-translate="tools.numero.title">Número a letras</span></h3>
+                    <p class="card-text" data-translate="tools.numero.description">Convierte números a su representación en letras en español. Soporta números enteros y decimales.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#numeroModal" data-translate="tools.common.open">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card reveal reveal-delay-2">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3" data-translate="tools.color.title"></i>Generador de Paleta de Colores</h3>
-                    <p class="card-text" data-translate="tools.color.description">Genera paletas de colores armoniosas con códigos hexadecimales para tus proyectos.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#colorModal" data-translate="tools.color.button">Abrir herramienta</button>
-                </div>
-            </div>
-
-            <div class="card mb-4 shadow tool-card reveal reveal-delay-3">
-                <div class="card-body p-4">
-                    <h3 class="card-title mb-3" data-translate="tools.unit.title"></i>Conversor de Unidades</h3>
-                    <p class="card-text" data-translate="tools.unit.description">Convierte entre diferentes unidades de longitud, peso y temperatura.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#unitModal" data-translate="tools.unit.button">Abrir herramienta</button>
+                    <h3 class="card-title mb-3"><i class="fas fa-font" aria-hidden="true"></i><span data-translate="tools.text.title">Limpieza de texto</span></h3>
+                    <p class="card-text" data-translate="tools.text.description">Mayúsculas, minúsculas, título, espacios extras y texto en una sola línea.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#textModal" data-translate="tools.common.open">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card reveal">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3" data-translate="tools.word.title">Contador de Palabras</h3>
-                    <p class="card-text" data-translate="tools.word.description">Cuenta palabras, caracteres, líneas y proporciona estadísticas de texto.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#wordModal" data-translate="tools.word.button">Abrir herramienta</button>
+                    <h3 class="card-title mb-3"><i class="fas fa-align-left" aria-hidden="true"></i><span data-translate="tools.word.title">Contador de Palabras</span></h3>
+                    <p class="card-text" data-translate="tools.word.description">Cuenta palabras, caracteres, líneas y estima el tiempo de lectura.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#wordModal" data-translate="tools.common.open">Abrir herramienta</button>
                 </div>
             </div>
 
             <div class="card mb-4 shadow tool-card reveal reveal-delay-1">
                 <div class="card-body p-4">
-                    <h3 class="card-title mb-3" data-translate="tools.json.title">Formateador JSON</h3>
+                    <h3 class="card-title mb-3"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span data-translate="tools.unit.title">Conversor de Unidades</span></h3>
+                    <p class="card-text" data-translate="tools.unit.description">Convierte entre diferentes unidades de longitud, peso y temperatura.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#unitModal" data-translate="tools.common.open">Abrir herramienta</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow tool-card reveal reveal-delay-2">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-3"><i class="fas fa-code" aria-hidden="true"></i><span data-translate="tools.json.title">Formateador JSON</span></h3>
                     <p class="card-text" data-translate="tools.json.description">Formatea, valida y embellece código JSON de manera rápida y sencilla.</p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#jsonModal" data-translate="tools.json.button">Abrir herramienta</button>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#jsonModal" data-translate="tools.common.open">Abrir herramienta</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Text cleanup Modal --><div class="modal fade" id="textModal" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="textModalLabel" data-translate="tools.text.modal.title">Limpieza de texto</h2>
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="styled-form">
+                    <label for="textToolInput" data-translate="tools.text.label">Texto</label>
+                    <textarea id="textToolInput" rows="8" placeholder="Pega tu texto aquí..." data-translate="tools.text.placeholder"></textarea>
+                    <div class="btn-row">
+                        <button type="button" class="text-white btn-convert" data-text-action="upper" data-translate="tools.text.upper">MAYÚSCULAS</button>
+                        <button type="button" class="text-white btn-convert" data-text-action="lower" data-translate="tools.text.lower">minúsculas</button>
+                        <button type="button" class="text-white btn-convert" data-text-action="title" data-translate="tools.text.titleCase">Título</button>
+                        <button type="button" class="text-white btn-convert" data-text-action="sentence" data-translate="tools.text.sentence">Frase</button>
+                        <button type="button" class="text-white btn-convert btn-secondary-action" data-text-action="trim" data-translate="tools.text.trim">Limpiar espacios</button>
+                        <button type="button" class="text-white btn-convert btn-secondary-action" data-text-action="oneline" data-translate="tools.text.oneline">Una línea</button>
+                        <button type="button" id="copyTextTool" class="text-white btn-convert" data-translate="tools.common.copy">Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Número Modal -->
 <div class="modal fade" id="numeroModal" tabindex="-1" aria-labelledby="numeroModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="numeroModalLabel" data-translate="tools.numero.modal.title">Número a letras en español</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="numeroForm" class="styled-form">
@@ -115,7 +137,7 @@
                     <button type="submit" class="text-white btn-convert" data-translate="tools.numero.modal.convert">Convertir</button>
                 </form>
                 <div id="resultado" style="display: none;"></div>
-                <div class="mt-3">
+                <div class="btn-row">
                     <button id="copyNumero" class="text-white btn-convert" style="display: none;" data-translate="tools.numero.modal.copy">Copiar resultado</button>
                 </div>
             </div>
@@ -123,58 +145,198 @@
     </div>
 </div>
 
-<!-- QR Code Modal -->
+<!-- QR Modal -->
 <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="qrModalLabel" data-translate="tools.qr.modal.title">Generador de Código QR</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
             </div>
-            <div class="modal-body">
-                <form id="qrForm" class="styled-form">
-                    <div class="mb-4">
-                        <label for="qrText" data-translate="tools.qr.modal.label">Texto o URL</label>
-                        <input type="text" id="qrText" placeholder="Ejemplo: https://tuwebsite.com" data-translate="tools.qr.modal.placeholder" required>
+            <div class="modal-body qr-modal-body">
+                <form id="qrForm" class="styled-form" onsubmit="return false;">
+                    <div class="qr-sticky-top">
+                        <div class="mb-2">
+                            <label for="qrText" data-translate="tools.qr.modal.label">Texto o URL</label>
+                            <input type="text" id="qrText" placeholder="Ejemplo: https://tuwebsite.com" data-translate="tools.qr.modal.placeholder" autocomplete="off" maxlength="1200">
+                        </div>
+
+                        <div class="qr-preview-wrap">
+                            <div class="qr-preview-meta">
+                                <span class="qr-preview-label" data-translate="tools.qr.preview">Vista previa</span>
+                                <span id="qrPreviewMeta" class="qr-preview-size"></span>
+                            </div>
+                            <div id="qrcode" class="qr-canvas-host"></div>
+                            <p id="qrPreviewEmpty" class="qr-preview-empty" data-translate="tools.qr.preview.empty">Escribe un texto o URL para ver el QR</p>
+                            <p id="qrPreviewError" class="qr-preview-error" style="display:none;"></p>
+                            <button type="button" id="downloadQR" class="btn-convert qr-download" style="display:none;" data-translate="tools.qr.modal.download">Descargar QR</button>
+                        </div>
                     </div>
-                    <button type="submit" class="text-white btn-convert" data-translate="tools.qr.modal.generate">Generar QR</button>
+
+                    <div class="qr-options">
+                        <div class="qr-options-row">
+                            <div class="qr-field">
+                                <label data-translate="tools.qr.size">Tamaño</label>
+                                <div class="visual-picker" role="group" aria-label="Size">
+                                    <button type="button" class="vpick vpick-size" data-qr="size" data-value="200" title="200px" aria-label="200" aria-pressed="false">
+                                        <span class="vpick-size-box" style="--box:12px"></span>
+                                    </button>
+                                    <button type="button" class="vpick vpick-size active" data-qr="size" data-value="280" title="280px" aria-label="280" aria-pressed="true">
+                                        <span class="vpick-size-box" style="--box:16px"></span>
+                                    </button>
+                                    <button type="button" class="vpick vpick-size" data-qr="size" data-value="360" title="360px" aria-label="360" aria-pressed="false">
+                                        <span class="vpick-size-box" style="--box:20px"></span>
+                                    </button>
+                                    <button type="button" class="vpick vpick-size" data-qr="size" data-value="480" title="480px" aria-label="480" aria-pressed="false">
+                                        <span class="vpick-size-box" style="--box:26px"></span>
+                                    </button>
+                                </div>
+                                <input type="hidden" id="qrSize" value="280">
+                            </div>
+
+                            <div class="qr-field">
+                                <label data-translate="tools.qr.margin">Margen</label>
+                                <div class="visual-picker" role="group" aria-label="Margin">
+                                    <button type="button" class="vpick vpick-margin" data-qr="margin" data-value="0" title="0%" aria-label="0" aria-pressed="false">
+                                        <span class="vpick-margin-frame" style="--pad:1px"><span></span></span>
+                                    </button>
+                                    <button type="button" class="vpick vpick-margin" data-qr="margin" data-value="4" title="4%" aria-label="4" aria-pressed="false">
+                                        <span class="vpick-margin-frame" style="--pad:2px"><span></span></span>
+                                    </button>
+                                    <button type="button" class="vpick vpick-margin active" data-qr="margin" data-value="8" title="8%" aria-label="8" aria-pressed="true">
+                                        <span class="vpick-margin-frame" style="--pad:4px"><span></span></span>
+                                    </button>
+                                    <button type="button" class="vpick vpick-margin" data-qr="margin" data-value="12" title="12%" aria-label="12" aria-pressed="false">
+                                        <span class="vpick-margin-frame" style="--pad:6px"><span></span></span>
+                                    </button>
+                                    <button type="button" class="vpick vpick-margin" data-qr="margin" data-value="16" title="16%" aria-label="16" aria-pressed="false">
+                                        <span class="vpick-margin-frame" style="--pad:8px"><span></span></span>
+                                    </button>
+                                </div>
+                                <input type="hidden" id="qrMargin" value="8">
+                            </div>
+                        </div>
+
+                        <div class="qr-field">
+                            <label data-translate="tools.qr.dots">Estilo de puntos</label>
+                            <div class="visual-picker" role="group" aria-label="Dots">
+                                <button type="button" class="vpick vpick-pattern active" data-qr="dots" data-value="square" title="Square" aria-label="square" aria-pressed="true">
+                                    <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="8" height="8"/><rect x="16" y="4" width="8" height="8"/><rect x="28" y="4" width="8" height="8"/><rect x="4" y="16" width="8" height="8"/><rect x="16" y="16" width="8" height="8"/><rect x="28" y="16" width="8" height="8"/><rect x="4" y="28" width="8" height="8"/><rect x="16" y="28" width="8" height="8"/><rect x="28" y="28" width="8" height="8"/></svg>
+                                </button>
+                                <button type="button" class="vpick vpick-pattern" data-qr="dots" data-value="dots" title="Dots" aria-label="dots" aria-pressed="false">
+                                    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="8" cy="8" r="4"/><circle cx="20" cy="8" r="4"/><circle cx="32" cy="8" r="4"/><circle cx="8" cy="20" r="4"/><circle cx="20" cy="20" r="4"/><circle cx="32" cy="20" r="4"/><circle cx="8" cy="32" r="4"/><circle cx="20" cy="32" r="4"/><circle cx="32" cy="32" r="4"/></svg>
+                                </button>
+                                <button type="button" class="vpick vpick-pattern" data-qr="dots" data-value="rounded" title="Rounded" aria-label="rounded" aria-pressed="false">
+                                    <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="2"/><rect x="16" y="4" width="8" height="8" rx="2"/><rect x="28" y="4" width="8" height="8" rx="2"/><rect x="4" y="16" width="8" height="8" rx="2"/><rect x="16" y="16" width="8" height="8" rx="2"/><rect x="28" y="16" width="8" height="8" rx="2"/><rect x="4" y="28" width="8" height="8" rx="2"/><rect x="16" y="28" width="8" height="8" rx="2"/><rect x="28" y="28" width="8" height="8" rx="2"/></svg>
+                                </button>
+                                <button type="button" class="vpick vpick-pattern" data-qr="dots" data-value="extra-rounded" title="Extra rounded" aria-label="extra-rounded" aria-pressed="false">
+                                    <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="3.5"/><rect x="16" y="4" width="8" height="8" rx="3.5"/><rect x="28" y="4" width="8" height="8" rx="3.5"/><rect x="4" y="16" width="8" height="8" rx="3.5"/><rect x="16" y="16" width="8" height="8" rx="3.5"/><rect x="28" y="16" width="8" height="8" rx="3.5"/><rect x="4" y="28" width="8" height="8" rx="3.5"/><rect x="16" y="28" width="8" height="8" rx="3.5"/><rect x="28" y="28" width="8" height="8" rx="3.5"/></svg>
+                                </button>
+                                <button type="button" class="vpick vpick-pattern" data-qr="dots" data-value="classy" title="Classy" aria-label="classy" aria-pressed="false">
+                                    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 4h8v5H9V4H4zm12 0h8v8h-8zm12 0h8v5h-3V4h-5zM4 16h8v8H4zm14 2h6v6h-6zm10-2h8v8h-8zM4 31h5v5H4zm14-2h8v8h-8zm12 2h5v5h-5z"/></svg>
+                                </button>
+                                <button type="button" class="vpick vpick-pattern" data-qr="dots" data-value="classy-rounded" title="Classy rounded" aria-label="classy-rounded" aria-pressed="false">
+                                    <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="8" height="5" rx="2"/><rect x="16" y="4" width="8" height="8" rx="2"/><rect x="28" y="4" width="8" height="5" rx="2"/><rect x="4" y="16" width="8" height="8" rx="2"/><rect x="18" y="18" width="6" height="6" rx="2"/><rect x="28" y="16" width="8" height="8" rx="2"/><rect x="4" y="31" width="5" height="5" rx="2"/><rect x="16" y="28" width="8" height="8" rx="2"/><rect x="31" y="31" width="5" height="5" rx="2"/></svg>
+                                </button>
+                            </div>
+                            <input type="hidden" id="qrDots" value="square">
+                        </div>
+
+                        <div class="qr-options-row">
+                            <div class="qr-field">
+                                <label data-translate="tools.qr.corners">Esquinas</label>
+                                <div class="visual-picker" role="group" aria-label="Corners">
+                                    <button type="button" class="vpick vpick-pattern active" data-qr="corners" data-value="square" title="Square" aria-label="square" aria-pressed="true">
+                                        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="20" height="20" fill="none" stroke="currentColor" stroke-width="5"/><rect x="12" y="12" width="4" height="4"/><rect x="28" y="6" width="5" height="5"/><rect x="28" y="14" width="5" height="5"/><rect x="6" y="28" width="5" height="5"/><rect x="14" y="28" width="5" height="5"/><rect x="28" y="28" width="5" height="5"/></svg>
+                                    </button>
+                                    <button type="button" class="vpick vpick-pattern" data-qr="corners" data-value="soft" title="Soft" aria-label="soft" aria-pressed="false">
+                                        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="20" height="20" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="14" cy="14" r="2.5"/><rect x="28" y="6" width="5" height="5"/><rect x="28" y="14" width="5" height="5"/><rect x="6" y="28" width="5" height="5"/><rect x="14" y="28" width="5" height="5"/><rect x="28" y="28" width="5" height="5"/></svg>
+                                    </button>
+                                    <button type="button" class="vpick vpick-pattern" data-qr="corners" data-value="dot" title="Dot" aria-label="dot" aria-pressed="false">
+                                        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="14" r="10" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="14" cy="14" r="3"/><rect x="28" y="6" width="5" height="5" rx="2.5"/><rect x="28" y="14" width="5" height="5" rx="2.5"/><rect x="6" y="28" width="5" height="5" rx="2.5"/><rect x="14" y="28" width="5" height="5" rx="2.5"/><rect x="28" y="28" width="5" height="5" rx="2.5"/></svg>
+                                    </button>
+                                    <button type="button" class="vpick vpick-pattern" data-qr="corners" data-value="rounded" title="Rounded" aria-label="rounded" aria-pressed="false">
+                                        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="20" height="20" rx="6" fill="none" stroke="currentColor" stroke-width="5"/><rect x="12" y="12" width="4" height="4"/><rect x="28" y="6" width="5" height="5" rx="1.5"/><rect x="28" y="14" width="5" height="5" rx="1.5"/><rect x="6" y="28" width="5" height="5" rx="1.5"/><rect x="14" y="28" width="5" height="5" rx="1.5"/><rect x="28" y="28" width="5" height="5" rx="1.5"/></svg>
+                                    </button>
+                                    <button type="button" class="vpick vpick-pattern" data-qr="corners" data-value="extra-rounded" title="Extra rounded" aria-label="extra-rounded" aria-pressed="false">
+                                        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="4" width="20" height="20" rx="6" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="14" cy="14" r="2.5"/><rect x="28" y="6" width="5" height="5" rx="2"/><rect x="28" y="14" width="5" height="5" rx="2"/><rect x="6" y="28" width="5" height="5" rx="2"/><rect x="14" y="28" width="5" height="5" rx="2"/><rect x="28" y="28" width="5" height="5" rx="2"/></svg>
+                                    </button>
+                                </div>
+                                <input type="hidden" id="qrCorners" value="square">
+                            </div>
+
+                            <div class="qr-field qr-colors">
+                                <label data-translate="tools.qr.colors">Colores</label>
+                                <div class="qr-color-row">
+                                    <label class="qr-color-chip" for="qrFg">
+                                        <input type="color" id="qrFg" value="#111827" aria-label="QR color">
+                                        <span data-translate="tools.qr.fg">QR</span>
+                                    </label>
+                                    <label class="qr-color-chip" for="qrBg">
+                                        <input type="color" id="qrBg" value="#ffffff" aria-label="Background">
+                                        <span data-translate="tools.qr.bg">Fondo</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="qr-field qr-logo-block">
+                            <label data-translate="tools.qr.icon">Icono central</label>
+                            <div class="qr-logo-row">
+                                <div class="qr-logo-slot" id="qrLogoSlot">
+                                    <img id="qrLogoThumb" class="qr-logo-thumb has-logo" src="public/qr-default-logo.png" alt="">
+                                </div>
+                                <div class="qr-logo-controls">
+                                    <label class="qr-file-btn" for="qrLogoFile">
+                                        <span data-translate="tools.qr.icon.upload">Sube tu logo</span>
+                                    </label>
+                                    <input type="file" id="qrLogoFile" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden>
+                                    <p class="qr-logo-hint" data-translate="tools.qr.icon.upload.hint">Se recorta al centro en cuadrado</p>
+                                    <div class="qr-logo-actions-inline">
+                                        <button type="button" id="clearQrLogo" class="qr-logo-clear" data-translate="tools.qr.icon.clear">Quitar logo</button>
+                                        <button type="button" id="resetQrLogo" class="qr-logo-clear" style="display:none;" data-translate="tools.qr.icon.reset">Usar predeterminado</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="qrLogoOptions" class="qr-logo-options">
+                                <div class="qr-field">
+                                    <label data-translate="tools.qr.icon.size">Tamaño del icono</label>
+                                    <div class="visual-picker" role="group" aria-label="Logo size">
+                                        <button type="button" class="vpick vpick-size" data-qr="logoSize" data-value="0.4" title="S" aria-label="0.4" aria-pressed="false">
+                                            <span class="vpick-size-box" style="--box:10px"></span>
+                                        </button>
+                                        <button type="button" class="vpick vpick-size" data-qr="logoSize" data-value="0.6" title="M" aria-label="0.6" aria-pressed="false">
+                                            <span class="vpick-size-box" style="--box:14px"></span>
+                                        </button>
+                                        <button type="button" class="vpick vpick-size active" data-qr="logoSize" data-value="0.8" title="L" aria-label="0.8" aria-pressed="true">
+                                            <span class="vpick-size-box" style="--box:18px"></span>
+                                        </button>
+                                        <button type="button" class="vpick vpick-size" data-qr="logoSize" data-value="1" title="XL" aria-label="1" aria-pressed="false">
+                                            <span class="vpick-size-box" style="--box:24px"></span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" id="qrLogoSize" value="0.8">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
-                <div id="qrcode" class="text-center mt-4" style="display: none;"></div>
-                <div class="text-center mt-3">
-                    <button id="downloadQR" class="text-white btn-convert" style="display: none;" data-translate="tools.qr.modal.download">Descargar QR</button>
-                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Color Palette Modal -->
-<div class="modal fade" id="colorModal" tabindex="-1" aria-labelledby="colorModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="colorModalLabel" data-translate="tools.color.modal.title">Generador de Paleta de Colores</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <button id="generateColors" class="text-white btn-convert mb-4" data-translate="tools.color.modal.generate">Generar Nueva Paleta</button>
-                <div id="colorPalette" class="row g-3"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Unit Converter Modal -->
+<!-- Unit Modal -->
 <div class="modal fade" id="unitModal" tabindex="-1" aria-labelledby="unitModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="unitModalLabel" data-translate="tools.unit.modal.title">Conversor de Unidades</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="unitForm" class="styled-form">
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="unitType" data-translate="tools.unit.modal.type">Tipo de conversión</label>
                         <select id="unitType" class="form-select">
                             <option value="length" data-translate="tools.unit.modal.type.length">Longitud</option>
@@ -182,19 +344,20 @@
                             <option value="temperature" data-translate="tools.unit.modal.type.temperature">Temperatura</option>
                         </select>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
+                    <div class="row align-items-end">
+                        <div class="col-md-5 mb-3">
                             <label for="unitFrom" data-translate="tools.unit.modal.from">De</label>
-                            <select id="unitFrom" class="form-select">
-                            </select>
+                            <select id="unitFrom" class="form-select"></select>
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-2 mb-3 text-center">
+                            <button type="button" id="swapUnits" class="text-white btn-convert" title="Swap" aria-label="Swap units"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                        <div class="col-md-5 mb-3">
                             <label for="unitTo" data-translate="tools.unit.modal.to">A</label>
-                            <select id="unitTo" class="form-select">
-                            </select>
+                            <select id="unitTo" class="form-select"></select>
                         </div>
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="unitValue" data-translate="tools.unit.modal.value">Valor</label>
                         <input type="number" id="unitValue" step="any" placeholder="Ingresa el valor" data-translate="tools.unit.modal.placeholder" required>
                     </div>
@@ -205,44 +368,48 @@
     </div>
 </div>
 
-<!-- Word Counter Modal -->
+<!-- Word Modal -->
 <div class="modal fade" id="wordModal" tabindex="-1" aria-labelledby="wordModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="wordModalLabel" data-translate="tools.word.modal.title">Contador de Palabras</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="styled-form">
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="textInput" data-translate="tools.word.modal.label">Texto</label>
                         <textarea id="textInput" rows="8" placeholder="Escribe o pega tu texto aquí..." data-translate="tools.word.modal.placeholder"></textarea>
                     </div>
+                    <div class="btn-row">
+                        <button type="button" id="clearWord" class="text-white btn-convert btn-secondary-action" data-translate="tools.common.clear">Limpiar</button>
+                    </div>
                 </div>
-                <div id="wordStats"></div>
+                <div id="wordStats" class="mt-3"></div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- JSON Formatter Modal -->
+<!-- JSON Modal -->
 <div class="modal fade" id="jsonModal" tabindex="-1" aria-labelledby="jsonModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="jsonModalLabel" data-translate="tools.json.modal.title">Formateador JSON</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="styled-form">
-                    <div class="mb-4">
+                    <div class="mb-3">
                         <label for="jsonInput" data-translate="tools.json.modal.label">JSON sin formatear</label>
                         <textarea id="jsonInput" rows="8" placeholder='{"ejemplo": "Pega tu JSON aquí"}' data-translate="tools.json.modal.placeholder"></textarea>
                     </div>
-                    <div class="d-flex gap-2 mb-4">
-                        <button id="formatJSON" class="text-white btn-convert flex-fill" style="margin-right: 0.5rem;" data-translate="tools.json.modal.format">Formatear</button>
-                        <button id="minifyJSON" class="text-white btn-convert flex-fill" style="margin-left: 0.5rem;" data-translate="tools.json.modal.minify">Minificar</button>
+                    <div class="btn-row">
+                        <button id="formatJSON" class="text-white btn-convert" data-translate="tools.json.modal.format">Formatear</button>
+                        <button id="minifyJSON" class="text-white btn-convert btn-secondary-action" data-translate="tools.json.modal.minify">Minificar</button>
+                        <button id="copyJSON" class="text-white btn-convert" style="display: none;" data-translate="tools.common.copy">Copiar</button>
                     </div>
                 </div>
                 <div id="jsonOutput" style="display: none;"></div>
@@ -253,384 +420,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    function normalizarNumeroEntrada(numero) {
-        const limpio = numero.replace(/\s+/g, '');
-        if (!/^\d{1,3}(\.\d{3})*(,\d+)?$|^\d+(,\d+)?$/.test(limpio)) {
-            throw new Error('Formato inválido');
-        }
-
-        const [enteroParte, decimalParte] = limpio.split(',');
-        const enteroNormalizado = enteroParte.replace(/\./g, '');
-
-        return {
-            entero: enteroNormalizado,
-            decimal: decimalParte || ''
-        };
-    }
-
-    function numeroALetras(numero) {
-        const unidades = ['', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve'];
-        const especiales = ['diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis', 'diecisiete', 'dieciocho', 'diecinueve'];
-        const decenas = ['', '', 'veinte', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 'setenta', 'ochenta', 'noventa'];
-        const centenas = ['', 'ciento', 'doscientos', 'trescientos', 'cuatrocientos', 'quinientos', 'seiscientos', 'setecientos', 'ochocientos', 'novecientos'];
-
-        function convertirGrupo(n) {
-            if (n === 0) return '';
-            if (n < 10) return unidades[n];
-            if (n < 20) return especiales[n - 10];
-            if (n < 30) return n === 20 ? 'veinte' : 'veinti' + unidades[n - 20];
-            if (n < 100) {
-                const dec = Math.floor(n / 10);
-                const uni = n % 10;
-                return decenas[dec] + (uni > 0 ? ' y ' + unidades[uni] : '');
-            }
-            if (n < 1000) {
-                const cent = Math.floor(n / 100);
-                const resto = n % 100;
-                const centStr = n === 100 ? 'cien' : centenas[cent];
-                return centStr + (resto > 0 ? ' ' + convertirGrupo(resto) : '');
-            }
-            return '';
-        }
-
-        function convertirMiles(n) {
-            if (n === 0) return 'cero';
-            if (n < 1000) return convertirGrupo(n);
-            
-            const miles = Math.floor(n / 1000);
-            const resto = n % 1000;
-            
-            let milesStr = '';
-            if (miles === 1) {
-                milesStr = 'mil';
-            } else {
-                milesStr = convertirGrupo(miles) + ' mil';
-            }
-            
-            return resto > 0 ? milesStr + ' ' + convertirGrupo(resto) : milesStr;
-        }
-
-        function convertirMillones(n) {
-            if (n < 1000000) return convertirMiles(n);
-            
-            const millones = Math.floor(n / 1000000);
-            const resto = n % 1000000;
-            
-            let millonesStr = '';
-            if (millones === 1) {
-                millonesStr = 'un millón';
-            } else {
-                millonesStr = convertirMiles(millones) + ' millones';
-            }
-            
-            return resto > 0 ? millonesStr + ' ' + convertirMiles(resto) : millonesStr;
-        }
-
-        const numeroNormalizado = normalizarNumeroEntrada(numero.toString());
-        let resultado;
-
-        if (numeroNormalizado.decimal && parseInt(numeroNormalizado.decimal, 10) !== 0) {
-            const enteroLetras = convertirMillones(parseInt(numeroNormalizado.entero, 10));
-            const decimalLetras = convertirMillones(parseInt(numeroNormalizado.decimal, 10));
-            resultado = enteroLetras + ' con ' + decimalLetras;
-        } else {
-            resultado = convertirMillones(parseInt(numeroNormalizado.entero, 10));
-        }
-
-        return resultado.toUpperCase();
-    }
-
-    document.getElementById('numeroForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const numeroInput = document.getElementById('numero').value;
-        const resultado = document.getElementById('resultado');
-        const copyButton = document.getElementById('copyNumero');
-        
-        try {
-            normalizarNumeroEntrada(numeroInput);
-
-            if (!numeroInput.trim()) {
-                resultado.textContent = 'Error: Por favor ingrese un número válido';
-                resultado.style.color = '#ff6b6b';
-                copyButton.style.display = 'none';
-            } else {
-                const letras = numeroALetras(numeroInput);
-                resultado.textContent = 'RESULTADO: ' + letras;
-                resultado.style.color = 'white';
-                resultado.dataset.resultado = letras;
-                copyButton.style.display = 'inline-block';
-            }
-            resultado.style.display = 'block';
-        } catch (error) {
-            resultado.textContent = 'Error: No se pudo convertir el número';
-            resultado.style.color = '#ff6b6b';
-            resultado.style.display = 'block';
-            copyButton.style.display = 'none';
-        }
-    });
-
-    document.getElementById('copyNumero').addEventListener('click', function() {
-        const resultado = document.getElementById('resultado');
-        const texto = resultado.dataset.resultado || '';
-
-        if (!texto) return;
-
-        navigator.clipboard.writeText(texto);
-        const copyButton = this;
-        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-        const copiedText = translations[savedLang]['tools.numero.modal.copied'] || 'Copiado';
-        const originalText = copyButton.textContent;
-
-        copyButton.textContent = copiedText;
-        setTimeout(() => {
-            copyButton.textContent = originalText;
-        }, 1000);
-    });
-
-    // Reset form when modal is closed
-    document.getElementById('numeroModal').addEventListener('hidden.bs.modal', function () {
-        document.getElementById('numeroForm').reset();
-        document.getElementById('resultado').style.display = 'none';
-        document.getElementById('resultado').dataset.resultado = '';
-        document.getElementById('copyNumero').style.display = 'none';
-    });
-
-// QR Code Generator
-document.getElementById('qrForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const text = document.getElementById('qrText').value;
-    const qrcodeDiv = document.getElementById('qrcode');
-    
-    qrcodeDiv.innerHTML = '';
-    qrcodeDiv.style.display = 'block';
-    
-    new QRCode(qrcodeDiv, {
-        text: text,
-        width: 256,
-        height: 256,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-    });
-    
-    document.getElementById('downloadQR').style.display = 'inline-block';
-});
-
-document.getElementById('downloadQR').addEventListener('click', function() {
-    const canvas = document.querySelector('#qrcode canvas');
-    const url = canvas.toDataURL('image/png');
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'qrcode.png';
-    a.click();
-});
-
-document.getElementById('qrModal').addEventListener('hidden.bs.modal', function() {
-    document.getElementById('qrForm').reset();
-    document.getElementById('qrcode').innerHTML = '';
-    document.getElementById('qrcode').style.display = 'none';
-    document.getElementById('downloadQR').style.display = 'none';
-});
-
-// Color Palette Generator
-function generateColor() {
-    return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
-}
-
-function generatePalette() {
-    const palette = document.getElementById('colorPalette');
-    palette.innerHTML = '';
-    
-    for (let i = 0; i < 5; i++) {
-        const color = generateColor();
-        const col = document.createElement('div');
-        col.className = 'col';
-        col.innerHTML = `
-            <div class="color-box" style="background: ${color}; height: 120px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; position: relative;">
-                <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; color: #111827;">${color}</div>
-            </div>
-        `;
-        col.querySelector('.color-box').addEventListener('click', function() {
-            navigator.clipboard.writeText(color);
-            const box = this;
-            const originalHTML = box.innerHTML;
-            const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-            const copiedText = translations[savedLang]['tools.color.modal.copied'] || 'Copiado';
-            box.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><i class="fas fa-check me-2"></i>${copiedText}</div>`;
-            setTimeout(() => box.innerHTML = originalHTML, 1000);
-        });
-        palette.appendChild(col);
-    }
-}
-
-document.getElementById('generateColors').addEventListener('click', generatePalette);
-document.getElementById('colorModal').addEventListener('shown.bs.modal', function() {
-    if (document.getElementById('colorPalette').children.length === 0) {
-        generatePalette();
-    }
-});
-
-// Unit Converter
-const units = {
-    length: {
-        metros: 1,
-        kilómetros: 0.001,
-        centímetros: 100,
-        milímetros: 1000,
-        millas: 0.000621371,
-        pies: 3.28084,
-        pulgadas: 39.3701
-    },
-    weight: {
-        kilogramos: 1,
-        gramos: 1000,
-        miligramos: 1000000,
-        libras: 2.20462,
-        onzas: 35.274,
-        toneladas: 0.001
-    },
-    temperature: {
-        celsius: 'C',
-        fahrenheit: 'F',
-        kelvin: 'K'
-    }
-};
-
-function updateUnitSelects() {
-    const type = document.getElementById('unitType').value;
-    const fromSelect = document.getElementById('unitFrom');
-    const toSelect = document.getElementById('unitTo');
-    
-    fromSelect.innerHTML = '';
-    toSelect.innerHTML = '';
-    
-    Object.keys(units[type]).forEach(unit => {
-        fromSelect.innerHTML += `<option value="${unit}">${unit.charAt(0).toUpperCase() + unit.slice(1)}</option>`;
-        toSelect.innerHTML += `<option value="${unit}">${unit.charAt(0).toUpperCase() + unit.slice(1)}</option>`;
-    });
-    
-    if (toSelect.options.length > 1) toSelect.selectedIndex = 1;
-}
-
-function convertTemperature(value, from, to) {
-    let celsius;
-    if (from === 'celsius') celsius = value;
-    else if (from === 'fahrenheit') celsius = (value - 32) * 5/9;
-    else celsius = value - 273.15;
-    
-    if (to === 'celsius') return celsius;
-    else if (to === 'fahrenheit') return celsius * 9/5 + 32;
-    else return celsius + 273.15;
-}
-
-function convertUnit() {
-    const type = document.getElementById('unitType').value;
-    const from = document.getElementById('unitFrom').value;
-    const to = document.getElementById('unitTo').value;
-    const value = parseFloat(document.getElementById('unitValue').value);
-    
-    if (isNaN(value)) return;
-    
-    let result;
-    if (type === 'temperature') {
-        result = convertTemperature(value, from, to);
-    } else {
-        result = value * units[type][from] / units[type][to];
-    }
-    
-    const resultDiv = document.getElementById('unitResult');
-    resultDiv.innerHTML = `<strong>${value} ${from}</strong> = <strong>${result.toFixed(4)} ${to}</strong>`;
-    resultDiv.style.display = 'block';
-}
-
-document.getElementById('unitType').addEventListener('change', updateUnitSelects);
-document.getElementById('unitValue').addEventListener('input', convertUnit);
-document.getElementById('unitFrom').addEventListener('change', convertUnit);
-document.getElementById('unitTo').addEventListener('change', convertUnit);
-
-document.getElementById('unitModal').addEventListener('shown.bs.modal', function() {
-    updateUnitSelects();
-});
-
-// Word Counter
-document.getElementById('textInput').addEventListener('input', function() {
-    const text = this.value;
-    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
-    const chars = text.length;
-    const charsNoSpaces = text.replace(/\s/g, '').length;
-    const lines = text.split('\n').length;
-    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
-    
-    document.getElementById('wordStats').innerHTML = `
-        <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border: 2px solid #d1d5db;">
-            <div class="row text-center">
-                <div class="col-6 col-md-3 mb-3">
-                    <div style="font-size: 2rem; font-weight: 700; color: #ff7a00;">${words}</div>
-                    <div style="color: #6b7280; font-size: 0.9rem;" data-translate="tools.word.modal.words">Palabras</div>
-                </div>
-                <div class="col-6 col-md-3 mb-3">
-                    <div style="font-size: 2rem; font-weight: 700; color: #ff7a00;">${chars}</div>
-                    <div style="color: #6b7280; font-size: 0.9rem;" data-translate="tools.word.modal.chars">Caracteres</div>
-                </div>
-                <div class="col-6 col-md-3 mb-3">
-                    <div style="font-size: 2rem; font-weight: 700; color: #ff7a00;">${charsNoSpaces}</div>
-                    <div style="color: #6b7280; font-size: 0.9rem;" data-translate="tools.word.modal.charsNoSpaces">Sin espacios</div>
-                </div>
-                <div class="col-6 col-md-3 mb-3">
-                    <div style="font-size: 2rem; font-weight: 700; color: #ff7a00;">${lines}</div>
-                    <div style="color: #6b7280; font-size: 0.9rem;" data-translate="tools.word.modal.lines">Líneas</div>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    // Re-translate newly added elements
-    const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-    translatePage(savedLang);
-});
-
-// JSON Formatter
-document.getElementById('formatJSON').addEventListener('click', function() {
-    const input = document.getElementById('jsonInput').value;
-    const output = document.getElementById('jsonOutput');
-    const error = document.getElementById('jsonError');
-    
-    try {
-        const parsed = JSON.parse(input);
-        const formatted = JSON.stringify(parsed, null, 2);
-        output.innerHTML = `<pre style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border: 2px solid #d1d5db; color: #111827; max-height: 400px; overflow: auto;">${formatted}</pre>`;
-        output.style.display = 'block';
-        error.style.display = 'none';
-    } catch (e) {
-        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-        const errorMsg = translations[savedLang]['tools.json.modal.error'] || 'Error: JSON inválido';
-        error.textContent = errorMsg + ' - ' + e.message;
-        error.style.display = 'block';
-        output.style.display = 'none';
-    }
-});
-
-document.getElementById('minifyJSON').addEventListener('click', function() {
-    const input = document.getElementById('jsonInput').value;
-    const output = document.getElementById('jsonOutput');
-    const error = document.getElementById('jsonError');
-    
-    try {
-        const parsed = JSON.parse(input);
-        const minified = JSON.stringify(parsed);
-        output.innerHTML = `<pre style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border: 2px solid #d1d5db; color: #111827; max-height: 400px; overflow: auto; word-wrap: break-word;">${minified}</pre>`;
-        output.style.display = 'block';
-        error.style.display = 'none';
-    } catch (e) {
-        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-        const errorMsg = translations[savedLang]['tools.json.modal.error'] || 'Error: JSON inválido';
-        error.textContent = errorMsg + ' - ' + e.message;
-        error.style.display = 'block';
-        output.style.display = 'none';
-    }
-});
-</script>
+<script src="js/tools.js"></script>
 
 <div id="footer-placeholder"></div>
 <script>

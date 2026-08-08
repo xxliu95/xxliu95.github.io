@@ -34,9 +34,26 @@
         onScroll();
     }
 
+    function initScrollProgress() {
+        var root = document.documentElement;
+        if (!document.querySelector('.scroll-progress')) return;
+
+        function update() {
+            var scrollTop = window.scrollY || root.scrollTop;
+            var height = root.scrollHeight - root.clientHeight;
+            var progress = height > 0 ? (scrollTop / height) * 100 : 0;
+            root.style.setProperty('--scroll-progress', progress + '%');
+        }
+
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update, { passive: true });
+        update();
+    }
+
     function init() {
         initScrollReveal();
         initNavbarScroll();
+        initScrollProgress();
     }
 
     if (document.readyState === 'loading') {

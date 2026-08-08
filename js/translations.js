@@ -7,45 +7,46 @@ const translations = {
         
         // Hero Section
         'hero.title': 'Xinxin Liu',
-        'hero.subtitle': 'Ingeniero de Software | Desarrollador Full-Stack',
+        'hero.subtitle': 'Ingeniero de Software | Development Team Leader',
         
         // About Section
         'about.title': 'Sobre Mí',
-        'about.content': 'Soy ingeniero de software con experiencia en desarrollo LTE y 5G. Tengo una capacidad demostrada para aprender rápidamente y adaptarme a nuevas tecnologías. Graduado en el 10% superior de mi clase, destaco en colaboración ágil en equipo, liderazgo técnico y entrega de proyectos de alta calidad. Mis sólidas habilidades de comunicación me permiten conectar equipos entre China y España de manera efectiva.',
+        'about.content': 'Ingeniero de software y Development Team Leader con experiencia en sistemas distribuidos, aplicaciones cloud, desarrollo asistido por IA y colaboración multifuncional. Capacidad demostrada para aprender rápido, resolver retos técnicos complejos y entregar software de alta calidad en entornos Agile.',
         
         // Experience Section
         'experience.title': 'Experiencia',
-        'experience.teamlead.title': 'Team Leader de Desarrollo de Software',
+        'experience.teamlead.title': 'Development Team Leader',
         'experience.teamlead.company': 'Ericsson Spain SA. | Madrid',
         'experience.teamlead.date': 'Mayo 2026 - Presente',
-        'experience.teamlead.description': 'Team Leader de un equipo multifuncional de desarrollo de software en el dominio 5G Core UPF. Las principales áreas de responsabilidad incluyen:',
-        'experience.teamlead.task1': 'Responsabilidades de Scrum Master, incluyendo planificación de sprints, refinamiento del backlog y ceremonias Agile',
-        'experience.teamlead.task2': 'Liderazgo y mentoring del equipo, apoyando decisiones técnicas y desarrollo profesional',
-        'experience.teamlead.task3': 'Coordinación con stakeholders, alineando prioridades de negocio, plazos de entrega y requisitos técnicos',
-        'experience.teamlead.task4': 'Planificación de recursos y gestión de riesgos, identificando y resolviendo bloqueos de forma proactiva',
-        'experience.teamlead.task5': 'Impulso de mejoras de proceso para aumentar la eficiencia del equipo y la predictibilidad de las entregas',
+        'experience.teamlead.task1': 'Lidero un equipo de ingeniería multifuncional que desarrolla el producto 5G Core de Ericsson',
+        'experience.teamlead.task2': 'Coordino stakeholders, prioridades de entrega y decisiones técnicas',
+        'experience.teamlead.task3': 'Impulso la ejecución Agile, el desarrollo del equipo y las mejoras de proceso',
+        'experience.teamlead.task4': 'Gestiono riesgos, planificación de recursos y compromisos de entrega',
 
-        'experience.ericsson.title': 'Ingeniero de Desarrollo de Software JS5',
+        'experience.ericsson.title': 'Ingeniero de Desarrollo de Software',
         'experience.ericsson.company': 'Ericsson Spain SA. | Madrid',
         'experience.ericsson.date': 'Julio 2021 - Presente',
-        'experience.ericsson.description': 'Experiencia en funcionalidades de LTE EPC y 5G Packet Core, incluyendo Deep Packet Inspection, IP Allocator y L2TP/PFCP Endpoint.',
-        'experience.ericsson.task1': 'Diseño, documentación, implementación y pruebas de historias de usuario utilizando C/C++ y Python',
-        'experience.ericsson.task2': 'Mejoras de código, como refactorización, eliminación de código duplicado y resolución de errores de clang-tidy',
-        'experience.ericsson.task3': 'Corrección de errores y mejoras de estabilidad, junto con el desarrollo de pruebas funcionales y unitarias',
-        'experience.ericsson.task4': 'Scripting de automatización usando Shell y Python',
-        'experience.ericsson.task5': 'Sólida familiaridad con protocolos de red, incluyendo TCP/IP, UDP, HTTP, L2TP, PFCP, DNS, y más',
-        'experience.ericsson.task6': 'Familiaridad con herramientas y metodologías de desarrollo de software, como Scrum, Kanban, Git, Gerrit, CI/CD, JIRA, UML',
+        'experience.ericsson.task1': 'Desarrollo sistemas de red distribuidos a gran escala con C++, Python y Linux',
+        'experience.ericsson.task2': 'Diseño, implemento, pruebo y mantengo funcionalidades de productos LTE y 5G Core',
+        'experience.ericsson.task3': 'Construyo herramientas de automatización y mejoro flujos de CI/CD y testing',
+        'experience.ericsson.task4': 'Refactoreo código legacy, mejoro mantenibilidad y resuelvo incidencias complejas en producción',
+        'experience.ericsson.task5': 'Colaboro con equipos distribuidos en Europa y China',
         
         'experience.freelance.title': 'Desarrollador Full-stack',
-        'experience.freelance.company': 'Freelance',
+        'experience.freelance.company': 'Autónomo',
         'experience.freelance.date': 'Feb 2025 – Presente',
-        'experience.freelance.description': 'Desarrollo de aplicaciones web con React, Django y PostgreSQL desplegadas en Google Cloud.',
-        'experience.freelance.task1': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> Construí un sistema completo de gestión empresarial para una empresa de logística utilizando React (frontend), Django REST Framework (backend) y PostgreSQL (base de datos), desplegado en Google Cloud Platform',
+        'experience.freelance.task1': 'Desarrollo aplicaciones web con React, Django y PostgreSQL desplegadas en Google Cloud',
+        'experience.freelance.task2': 'Integro APIs de terceros, servicios de pago y proveedores logísticos',
+        'experience.freelance.task3': 'Uso LLMs, agentes de IA y flujos MCP para acelerar el desarrollo y automatizar procesos de negocio',
+        'experience.freelance.task4': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> Sistema de gestión empresarial para logística — React, Django REST Framework, PostgreSQL, Google Cloud',
+        'experience.freelance.task5': '<strong><a href="https://colegiobase.cn" target="_blank" rel="noopener noreferrer">colegiobase.cn</a>:</strong> Sitio web de marketing en chino para Base International School (Madrid)',
+        'experience.freelance.task6': '<strong><a href="https://thehumanclarity.com" target="_blank" rel="noopener noreferrer">thehumanclarity.com</a>:</strong> Web profesional para psicóloga y coach ejecutiva — servicios, proceso y contacto',
         
         'experience.intern.title': 'Ingeniero de Desarrollo de Software I+D (Prácticas)',
         'experience.intern.company': 'Ericsson Spain SA. | Madrid',
         'experience.intern.date': 'Julio 2020 – Junio 2021',
-        'experience.intern.description': 'Optimización de tráfico y análisis de rendimiento de streaming usando NS-3, incluyendo desarrollo de módulo ABR en C++.',
+        'experience.intern.task1': 'Desarrollé simulaciones de optimización de tráfico y streaming adaptativo con NS-3 y C++',
+        'experience.intern.task2': 'Implementé algoritmos ABR y realicé análisis de rendimiento',
         
         // Education Section
         'education.title': 'Educación',
@@ -80,17 +81,18 @@ const translations = {
         'skills.languages.title': 'Idiomas',
         'skills.languages.chinese': 'Chino (Nativo)',
         'skills.languages.spanish': 'Español (Nativo)',
-        'skills.languages.english': 'Inglés (Profesional)',
+        'skills.languages.english': 'Inglés (C1)',
         
         'skills.programming.title': 'Programación',
+        'skills.ai.title': 'IA',
         
-        'skills.technologies.title': 'Tecnologías y Herramientas',
+        'skills.technologies.title': 'Herramientas',
         
         'skills.soft.title': 'Soft Skills',
-        'skills.soft.agile': 'Trabajo en Equipo Ágil',
-        'skills.soft.problem': 'Resolución de Problemas',
-        'skills.soft.troubleshooting': 'Solución de Incidencias',
-        'skills.soft.leadership': 'Liderazgo Técnico',
+        'skills.soft.agile': 'Trabajo en equipo Agile',
+        'skills.soft.problem': 'Resolución de problemas complejos',
+        'skills.soft.troubleshooting': 'Troubleshooting',
+        'skills.soft.leadership': 'Liderazgo de proyectos técnicos',
         
         // Tools Page
         'tools.title': 'Herramientas',
@@ -188,45 +190,46 @@ const translations = {
         
         // Hero Section
         'hero.title': 'Xinxin Liu',
-        'hero.subtitle': 'Software Engineer | Full-Stack Developer',
+        'hero.subtitle': 'Software Engineer | Development Team Leader',
         
         // About Section
         'about.title': 'About Me',
-        'about.content': 'I am a software engineer with LTE and 5G development experience. I have a proven ability to quickly learn and adapt to new technologies. Graduating in the top 10% of my class, I excel in agile team collaboration, technical leadership, and high-quality project delivery. My strong communication skills enable me to bridge teams between China and Spain effectively.',
+        'about.content': 'Software engineer and Development Team Leader with experience in distributed systems, cloud applications, AI-assisted development, and cross-functional collaboration. Proven ability to learn quickly, solve complex technical challenges, and deliver high-quality software solutions in Agile environments.',
         
         // Experience Section
         'experience.title': 'Experience',
-        'experience.teamlead.title': 'Software Development Team Leader',
+        'experience.teamlead.title': 'Development Team Leader',
         'experience.teamlead.company': 'Ericsson Spain SA. | Madrid',
         'experience.teamlead.date': 'May 2026 - Present',
-        'experience.teamlead.description': 'Leading a cross-functional software development team in 5G Core UPF domain. Key areas of responsibility include:',
-        'experience.teamlead.task1': 'Scrum Master responsibilities including sprint planning, backlog refinement, and Agile ceremonies',
-        'experience.teamlead.task2': 'Team leadership and mentoring, supporting technical decisions and professional development',
-        'experience.teamlead.task3': 'Stakeholder coordination, aligning business priorities, delivery timelines, and technical requirements',
-        'experience.teamlead.task4': 'Resource planning and risk management, proactively identifying and resolving blockers',
-        'experience.teamlead.task5': 'Driving process improvements to enhance team efficiency and delivery predictability',
+        'experience.teamlead.task1': 'Lead a cross-functional engineering team developing Ericsson\'s 5G Core product',
+        'experience.teamlead.task2': 'Coordinate stakeholders, delivery priorities, and technical decisions',
+        'experience.teamlead.task3': 'Drive Agile execution, team development, and process improvements',
+        'experience.teamlead.task4': 'Manage risks, resource planning, and delivery commitments',
 
-        'experience.ericsson.title': 'Software Development Engineer JS5',
+        'experience.ericsson.title': 'Software Development Engineer',
         'experience.ericsson.company': 'Ericsson Spain SA. | Madrid',
         'experience.ericsson.date': 'July 2021 - Present',
-        'experience.ericsson.description': 'Experience in LTE EPC and 5G Packet Core features, including Deep Packet Inspection, IP Allocator and L2TP/PFCP Endpoint.',
-        'experience.ericsson.task1': 'Design, documentation, implementation, and testing of user stories using C/C++ and Python',
-        'experience.ericsson.task2': 'Code improvements, such as refactoring, removing duplicate code, and resolving clang-tidy errors',
-        'experience.ericsson.task3': 'Bug fixing and stability enhancements, along with the development of functional and unit tests',
-        'experience.ericsson.task4': 'Automation scripting using Shell and Python',
-        'experience.ericsson.task5': 'Strong familiarity with network protocols, including TCP/IP, UDP, HTTP, L2TP, PFCP, DNS, and more',
-        'experience.ericsson.task6': 'Familiarity with software development tools and methodologies, such as Scrum, Kanban, Git, Gerrit, CI/CD, JIRA, UML',
+        'experience.ericsson.task1': 'Develop large-scale distributed networking systems using C++, Python, and Linux',
+        'experience.ericsson.task2': 'Design, implement, test, and maintain software features for LTE and 5G Core products',
+        'experience.ericsson.task3': 'Build automation tools and improve CI/CD and testing workflows',
+        'experience.ericsson.task4': 'Refactor legacy code, improve maintainability, and resolve complex production issues',
+        'experience.ericsson.task5': 'Collaborate with distributed teams across Europe and China',
         
         'experience.freelance.title': 'Full-stack Developer',
-        'experience.freelance.company': 'Freelance',
+        'experience.freelance.company': 'Self-Employed',
         'experience.freelance.date': 'Feb 2025 – Present',
-        'experience.freelance.description': 'Develop web applications with React, Django and PostgreSQL deployed in Google Cloud.',
-        'experience.freelance.task1': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> Built a complete business management system for a logistics company using React (frontend), Django REST Framework (backend), and PostgreSQL (database), deployed on Google Cloud Platform',
+        'experience.freelance.task1': 'Develop web applications with React, Django and PostgreSQL deployed in Google Cloud',
+        'experience.freelance.task2': 'Integrate third-party APIs, payment services and logistics providers',
+        'experience.freelance.task3': 'Leverage LLMs, AI agents and MCP-based workflows to accelerate development and automate business processes',
+        'experience.freelance.task4': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> Business management system for a logistics company — React, Django REST Framework, PostgreSQL, Google Cloud',
+        'experience.freelance.task5': '<strong><a href="https://colegiobase.cn" target="_blank" rel="noopener noreferrer">colegiobase.cn</a>:</strong> Chinese-language marketing website for Base International School (Madrid)',
+        'experience.freelance.task6': '<strong><a href="https://thehumanclarity.com" target="_blank" rel="noopener noreferrer">thehumanclarity.com</a>:</strong> Professional website for an executive psychologist and coach — services, process, and contact',
         
         'experience.intern.title': 'R&D Software Development Engineer Intern',
         'experience.intern.company': 'Ericsson Spain SA. | Madrid',
         'experience.intern.date': 'July 2020 – June 2021',
-        'experience.intern.description': 'Traffic optimization and streaming performance analysis using NS-3, including ABR module development in C++.',
+        'experience.intern.task1': 'Developed traffic optimization and adaptive video streaming simulations using NS-3 and C++',
+        'experience.intern.task2': 'Implemented ABR algorithms and performed performance analysis',
         
         // Education Section
         'education.title': 'Education',
@@ -261,17 +264,18 @@ const translations = {
         'skills.languages.title': 'Languages',
         'skills.languages.chinese': 'Chinese (Native)',
         'skills.languages.spanish': 'Spanish (Native)',
-        'skills.languages.english': 'English (Professional)',
+        'skills.languages.english': 'English (C1)',
         
         'skills.programming.title': 'Programming',
+        'skills.ai.title': 'AI',
         
-        'skills.technologies.title': 'Technologies & Tools',
+        'skills.technologies.title': 'Tools',
         
         'skills.soft.title': 'Soft Skills',
         'skills.soft.agile': 'Agile Teamwork',
-        'skills.soft.problem': 'Problem Solving',
+        'skills.soft.problem': 'Complex Problem Solving',
         'skills.soft.troubleshooting': 'Troubleshooting',
-        'skills.soft.leadership': 'Tech Leadership',
+        'skills.soft.leadership': 'Tech Project Leadership',
         
         // Tools Page
         'tools.title': 'Tools',
@@ -369,45 +373,46 @@ const translations = {
         
         // Hero Section
         'hero.title': '留鑫鑫',
-        'hero.subtitle': '软件工程师 | Full-stack开发',
+        'hero.subtitle': '软件工程师 | 软件开发组长',
         
         // About Section
         'about.title': '关于我',
-        'about.content': '软件工程师，专注LTE和5G开发。善于快速学习和适应新技术，本硕均以年级前10%毕业。在敏捷开发中经验丰富，具备技术领导能力，注重项目质量。中西双语环境成长，能够顺畅协调中西团队协作。',
+        'about.content': '软件工程师与软件开发组长，具备分布式系统、云应用、AI 辅助开发及跨职能协作经验。擅长快速学习、解决复杂技术问题，并在敏捷环境中交付高质量软件。',
         
         // Experience Section
         'experience.title': '工作经验',
-        'experience.teamlead.title': '软件开发团队负责人',
+        'experience.teamlead.title': '软件开发组长',
         'experience.teamlead.company': '爱立信西班牙 | 马德里',
         'experience.teamlead.date': '2026年5月 - 至今',
-        'experience.teamlead.description': '负责领导5G Core UPF领域的跨职能软件开发团队。主要职责包括：',
-        'experience.teamlead.task1': '承担Scrum Master职责，包括冲刺计划、需求列表梳理及敏捷会议组织',
-        'experience.teamlead.task2': '团队领导与辅导，支持技术决策和成员职业发展',
-        'experience.teamlead.task3': '协调利益相关方，对齐业务优先级、交付计划和技术需求',
-        'experience.teamlead.task4': '资源规划与风险管理，主动识别并解决阻塞问题',
-        'experience.teamlead.task5': '推动流程改进，提升团队效率和交付可预测性',
+        'experience.teamlead.task1': '领导跨职能工程团队，开发爱立信 5G Core 产品',
+        'experience.teamlead.task2': '协调利益相关方、交付优先级与技术决策',
+        'experience.teamlead.task3': '推动敏捷落地、团队发展与流程改进',
+        'experience.teamlead.task4': '管理风险、资源规划与交付承诺',
 
-        'experience.ericsson.title': '软件开发工程师 JS5',
+        'experience.ericsson.title': '软件开发工程师',
         'experience.ericsson.company': '爱立信西班牙 | 马德里',
         'experience.ericsson.date': '2021年7月 - 至今',
-        'experience.ericsson.description': '负责LTE EPC及5G核心网功能开发，包含深度包检测(DPI)、IP Allocator、L2TP/PFCP Endpoint等模块。',
-        'experience.ericsson.task1': '使用C/C++和Python完成需求设计、文档编写、代码实现及测试',
-        'experience.ericsson.task2': '代码优化重构，消除冗余代码，修复clang-tidy静态检查问题',
-        'experience.ericsson.task3': '修复Bug并提升系统稳定性，编写功能测试和单元测试',
-        'experience.ericsson.task4': '编写Shell和Python自动化脚本',
-        'experience.ericsson.task5': '熟练掌握TCP/IP、UDP、HTTP、L2TP、PFCP、DNS等网络协议',
-        'experience.ericsson.task6': '熟悉Scrum、Kanban敏捷开发，掌握Git、Gerrit、CI/CD、JIRA、UML等工具',
+        'experience.ericsson.task1': '使用 C++、Python 与 Linux 开发大规模分布式网络系统',
+        'experience.ericsson.task2': '设计、实现、测试并维护 LTE 与 5G Core 产品功能',
+        'experience.ericsson.task3': '构建自动化工具，改进 CI/CD 与测试流程',
+        'experience.ericsson.task4': '重构遗留代码，提升可维护性，并解决复杂生产问题',
+        'experience.ericsson.task5': '与欧洲及中国的分布式团队协作',
         
         'experience.freelance.title': '全栈开发工程师',
-        'experience.freelance.company': '自由职业',
+        'experience.freelance.company': '独立开发',
         'experience.freelance.date': '2025年2月 - 至今',
-        'experience.freelance.description': '基于React、Django和PostgreSQL开发Web应用，部署于Google Cloud。',
-        'experience.freelance.task1': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> 为物流公司搭建完整业务管理系统，采用React前端、Django REST Framework后端、PostgreSQL数据库，部署在Google Cloud Platform',
+        'experience.freelance.task1': '使用 React、Django 与 PostgreSQL 开发 Web 应用，并部署于 Google Cloud',
+        'experience.freelance.task2': '集成第三方 API、支付服务与物流服务商',
+        'experience.freelance.task3': '运用 LLM、AI Agent 与 MCP 工作流加速开发并自动化业务流程',
+        'experience.freelance.task4': '<strong><a href="https://xmexpress.es" target="_blank" rel="noopener noreferrer">xmexpress.es</a>:</strong> 物流公司业务管理系统 — React、Django REST Framework、PostgreSQL、Google Cloud',
+        'experience.freelance.task5': '<strong><a href="https://colegiobase.cn" target="_blank" rel="noopener noreferrer">colegiobase.cn</a>:</strong> 马德里 Base International School 中文营销官网',
+        'experience.freelance.task6': '<strong><a href="https://thehumanclarity.com" target="_blank" rel="noopener noreferrer">thehumanclarity.com</a>:</strong> 高管心理咨询与教练个人官网 — 服务介绍、流程与联系',
         
         'experience.intern.title': '研发软件开发工程师实习生',
         'experience.intern.company': '爱立信西班牙 | 马德里',
         'experience.intern.date': '2020年7月 - 2021年6月',
-        'experience.intern.description': '基于NS-3进行流量优化及流媒体性能分析，使用C++开发ABR自适应码率模块。',
+        'experience.intern.task1': '基于 NS-3 与 C++ 开发流量优化及自适应视频流仿真',
+        'experience.intern.task2': '实现 ABR 算法并进行性能分析',
         
         // Education Section
         'education.title': '教育背景',
@@ -445,14 +450,15 @@ const translations = {
         'skills.languages.english': '英语（C1）',
         
         'skills.programming.title': '编程',
+        'skills.ai.title': 'AI',
         
-        'skills.technologies.title': '技术与工具',
+        'skills.technologies.title': '工具',
         
         'skills.soft.title': '软技能',
         'skills.soft.agile': '敏捷团队协作',
-        'skills.soft.problem': '问题解决',
+        'skills.soft.problem': '复杂问题解决',
         'skills.soft.troubleshooting': '故障排查',
-        'skills.soft.leadership': '技术领导',
+        'skills.soft.leadership': '技术项目领导',
         
         // Tools Page
         'tools.title': '工具',

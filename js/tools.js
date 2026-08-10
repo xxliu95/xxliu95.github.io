@@ -873,4 +873,156 @@
             copyText(v).then(function () { flashCopied(copyTextTool); });
         });
     }
+
+    /* -------- Date / business-day calculator (Spain) -------- */
+    function parseDateInput(value) {
+        if (!value) return null;
+        var parts = value.split('-');
+        if (parts.length !== 3) return null;
+        var y = parseInt(parts[0], 10);
+        var m = parseInt(parts[1], 10);
+        var d = parseInt(parts[2], 10);
+        if (!y || !m || !d) return null;
+        return new Date(y, m - 1, d);
+    }
+
+    function dateKey(date) {
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
+
+    function easterSunday(year) {
+        var a = year % 19;
+        var b = Math.floor(year / 100);
+        var c = year % 100;
+        var d = Math.floor(b / 4);
+        var e = b % 4;
+        var f = Math.floor((b + 8) / 25);
+        var g = Math.floor((b - f + 1) / 3);
+        var h = (19 * a + b - d - g + 15) % 30;
+        var i = Math.floor(c / 4);
+        var k = c % 4;
+        var l = (32 + 2 * e + 2 * i - h - k) % 7;
+        var m = Math.floor((a + 11 * h + 22 * l) / 451);
+        var month = Math.floor((h + l - 7 * m + 114) / 31);
+        var day = ((h + l - 7 * m + 114) % 31) + 1;
+        return new Date(year, month - 1, day);
+    }
+
+    function spainHolidaySet(year) {
+        var set = {};
+        var fixed = [
+            [0, 1],   // Año Nuevo
+            [0, 6],   // Reyes
+            [4, 1],   // Fiesta del Trabajo
+            [7, 15],  // Asunción
+            [9, 12],  // Fiesta Nacional
+            [10, 1],  // Todos los Santos
+            [11, 6],  // Constitución
+            [11, 8],  // Inmaculada
+            [11, 25]  // Navidad
+        ];
+        fixed.forEach(function (md) {
+            set[dateKey(new Date(year, md[0], md[1]))] = true;
+        });
+        var easter = easterSunday(year);
+        var goodFriday = new Date(easter.getFullYear(), easter.getMonth(), easter.getDate() - 2);
+        set[dateKey(goodFriday)] = true;
+        return set;
+    }
+
+    function holidayCacheForRange(start, end) {
+        var cache = {};
+        var y0 = start.getFullYear();
+        var y1 = end.getFullYear();
+        for (var y = y0; y <= y1; y++) cache[y] = spainHolidaySet(y);
+        return cache;
+    }
+
+    function isSpainHoliday(date, cache) {
+        var yearSet = cache[date.getFullYear()];
+        return !!(yearSet && yearSet[dateKey(date)]);
+    }
+
+    function countDateRange(start, end, inclusive) {
+        var a = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+        var b = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+        if (a.getTime() > b.getTime()) {
+            var tmp = a;
+            a = b;
+            b = tmp;
+        }
+
+        if (!inclusive) {
+            a.setDate(a.getDate() + 1);
+            b.setDate(b.getDate() - 1);
+        }
+
+        var calendar = 0;
+        var business = 0;
+        var holidays = 0;
+
+        if (a.getTime() > b.getTime()) {
+            return { calendar: 0, business: 0, holidays: 0 };
+        }
+
+        var holidaysCache = holidayCacheForRange(a, b);
+        var cur = new Date(a.getFullYear(), a.getMonth(), a.getDate());
+        while (cur.getTime() <= b.getTime()) {
+            calendar += 1;
+            var day = cur.getDay();
+            var weekend = day === 0 || day === 6;
+            var holiday = isSpainHoliday(cur, holidaysCache);
+            if (holiday) holidays += 1;
+            if (!weekend && !holiday) business += 1;
+            cur.setDate(cur.getDate() + 1);
+        }
+
+        return { calendar: calendar, business: business, holidays: holidays };
+    }
+
+    var dateFrom = document.getElementById('dateFrom');
+    var dateTo = document.getElementById('dateTo');
+    var dateInclusive = document.getElementById('dateInclusive');
+    var dateStats = document.getElementById('dateStats');
+
+    if (dateFrom && dateTo && dateInclusive && dateStats) {
+        function updateDateStats() {
+            var start = parseDateInput(dateFrom.value);
+            var end = parseDateInput(dateTo.value);
+            if (!start || !end) {
+                dateStats.innerHTML = '<p class="date-tool-empty">' +
+                    t('tools.dates.modal.empty', 'Select two dates to calculate.') + '</p>';
+                return;
+            }
+
+            var result = countDateRange(start, end, dateInclusive.checked);
+            dateStats.innerHTML =
+                '<div class="stats-grid">' +
+                '<div class="stat-card"><strong>' + result.calendar + '</strong><span>' +
+                t('tools.dates.modal.calendar', 'Calendar days') + '</span></div>' +
+                '<div class="stat-card"><strong>' + result.business + '</strong><span>' +
+                t('tools.dates.modal.business', 'Business days') + '</span></div>' +
+                '<div class="stat-card"><strong>' + result.holidays + '</strong><span>' +
+                t('tools.dates.modal.holidays', 'National holidays') + '</span></div>' +
+                '</div>';
+        }
+
+        dateFrom.addEventListener('change', updateDateStats);
+        dateTo.addEventListener('change', updateDateStats);
+        dateInclusive.addEventListener('change', updateDateStats);
+
+        var datesModal = document.getElementById('datesModal');
+        if (datesModal) {
+            datesModal.addEventListener('shown.bs.modal', updateDateStats);
+            datesModal.addEventListener('hidden.bs.modal', function () {
+                dateFrom.value = '';
+                dateTo.value = '';
+                dateInclusive.checked = true;
+                updateDateStats();
+            });
+        }
+
+        document.addEventListener('languageChanged', updateDateStats);
+        updateDateStats();
+    }
 })();

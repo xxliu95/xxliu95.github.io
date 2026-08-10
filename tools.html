@@ -53,13 +53,21 @@
 
             <div class="card mb-4 shadow tool-card reveal reveal-delay-1">
                 <div class="card-body p-4">
+                    <h3 class="card-title mb-3"><i class="fas fa-calendar-days" aria-hidden="true"></i><span data-translate="tools.dates.title">Calculadora de días</span></h3>
+                    <p class="card-text" data-translate="tools.dates.description">Calcula días naturales y laborables en España entre dos fechas, con o sin incluir los extremos.</p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#datesModal" data-translate="tools.common.open">Abrir herramienta</button>
+                </div>
+            </div>
+
+            <div class="card mb-4 shadow tool-card reveal reveal-delay-2">
+                <div class="card-body p-4">
                     <h3 class="card-title mb-3"><i class="fas fa-spell-check" aria-hidden="true"></i><span data-translate="tools.numero.title">Número a letras</span></h3>
                     <p class="card-text" data-translate="tools.numero.description">Convierte números a su representación en letras en español. Soporta números enteros y decimales.</p>
                     <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#numeroModal" data-translate="tools.common.open">Abrir herramienta</button>
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card reveal reveal-delay-2">
+            <div class="card mb-4 shadow tool-card reveal">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3"><i class="fas fa-font" aria-hidden="true"></i><span data-translate="tools.text.title">Limpieza de texto</span></h3>
                     <p class="card-text" data-translate="tools.text.description">Mayúsculas, minúsculas, título, espacios extras y texto en una sola línea.</p>
@@ -67,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card reveal">
+            <div class="card mb-4 shadow tool-card reveal reveal-delay-1">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3"><i class="fas fa-align-left" aria-hidden="true"></i><span data-translate="tools.word.title">Contador de Palabras</span></h3>
                     <p class="card-text" data-translate="tools.word.description">Cuenta palabras, caracteres, líneas y estima el tiempo de lectura.</p>
@@ -75,7 +83,7 @@
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card reveal reveal-delay-1">
+            <div class="card mb-4 shadow tool-card reveal reveal-delay-2">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span data-translate="tools.unit.title">Conversor de Unidades</span></h3>
                     <p class="card-text" data-translate="tools.unit.description">Convierte entre diferentes unidades de longitud, peso y temperatura.</p>
@@ -83,7 +91,7 @@
                 </div>
             </div>
 
-            <div class="card mb-4 shadow tool-card reveal reveal-delay-2">
+            <div class="card mb-4 shadow tool-card reveal">
                 <div class="card-body p-4">
                     <h3 class="card-title mb-3"><i class="fas fa-code" aria-hidden="true"></i><span data-translate="tools.json.title">Formateador JSON</span></h3>
                     <p class="card-text" data-translate="tools.json.description">Formatea, valida y embellece código JSON de manera rápida y sencilla.</p>
@@ -413,6 +421,38 @@
                 </div>
                 <div id="jsonOutput" style="display: none;"></div>
                 <div id="jsonError" style="display: none; color: #dc3545; font-weight: 600; margin-top: 1rem;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dates Modal -->
+<div class="modal fade" id="datesModal" tabindex="-1" aria-labelledby="datesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="datesModalLabel" data-translate="tools.dates.modal.title">Calculadora de días</h2>
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="styled-form">
+                    <div class="date-range-row">
+                        <div class="mb-3">
+                            <label for="dateFrom" data-translate="tools.dates.modal.from">Fecha inicio</label>
+                            <input type="date" id="dateFrom" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dateTo" data-translate="tools.dates.modal.to">Fecha fin</label>
+                            <input type="date" id="dateTo" required>
+                        </div>
+                    </div>
+                    <label class="date-option-check" for="dateInclusive">
+                        <input type="checkbox" id="dateInclusive" checked>
+                        <span data-translate="tools.dates.modal.inclusive">Incluir las dos fechas seleccionadas</span>
+                    </label>
+                    <p class="date-tool-note" data-translate="tools.dates.modal.note">Días laborables: lunes a viernes, sin festivos nacionales de España. No incluye festivos autonómicos.</p>
+                </div>
+                <div id="dateStats" class="mt-3"></div>
             </div>
         </div>
     </div>

@@ -232,6 +232,18 @@ const translations = {
         'tools.json.modal.format': 'Formatear',
         'tools.json.modal.minify': 'Minificar',
         'tools.json.modal.error': 'Error: JSON inválido',
+
+        'tools.dates.title': 'Calculadora de días',
+        'tools.dates.description': 'Calcula días naturales y laborables en España entre dos fechas, con o sin incluir los extremos.',
+        'tools.dates.modal.title': 'Calculadora de días',
+        'tools.dates.modal.from': 'Fecha inicio',
+        'tools.dates.modal.to': 'Fecha fin',
+        'tools.dates.modal.inclusive': 'Incluir las dos fechas seleccionadas',
+        'tools.dates.modal.note': 'Días laborables: lunes a viernes, sin festivos nacionales de España. No incluye festivos autonómicos.',
+        'tools.dates.modal.calendar': 'Días naturales',
+        'tools.dates.modal.business': 'Días laborables',
+        'tools.dates.modal.holidays': 'Festivos nacionales',
+        'tools.dates.modal.empty': 'Selecciona dos fechas para calcular.',
         
         // Footer
         'footer.rights': '© 2026 Xinxin Liu. Todos los derechos reservados.',
@@ -471,6 +483,18 @@ const translations = {
         'tools.json.modal.format': 'Format',
         'tools.json.modal.minify': 'Minify',
         'tools.json.modal.error': 'Error: Invalid JSON',
+
+        'tools.dates.title': 'Day Calculator',
+        'tools.dates.description': 'Count calendar days and Spanish business days between two dates, with or without the endpoints.',
+        'tools.dates.modal.title': 'Day Calculator',
+        'tools.dates.modal.from': 'Start date',
+        'tools.dates.modal.to': 'End date',
+        'tools.dates.modal.inclusive': 'Include both selected dates',
+        'tools.dates.modal.note': 'Business days: Monday–Friday, excluding Spanish national holidays. Regional holidays are not included.',
+        'tools.dates.modal.calendar': 'Calendar days',
+        'tools.dates.modal.business': 'Business days',
+        'tools.dates.modal.holidays': 'National holidays',
+        'tools.dates.modal.empty': 'Select two dates to calculate.',
         
         // Footer
         'footer.rights': '© 2026 Xinxin Liu. All rights reserved.',
@@ -710,6 +734,18 @@ const translations = {
         'tools.json.modal.format': '格式化',
         'tools.json.modal.minify': '压缩',
         'tools.json.modal.error': '错误：无效的JSON',
+
+        'tools.dates.title': '日期计算器',
+        'tools.dates.description': '计算两个日期之间的自然日与西班牙工作日，可选是否包含起止日期。',
+        'tools.dates.modal.title': '日期计算器',
+        'tools.dates.modal.from': '开始日期',
+        'tools.dates.modal.to': '结束日期',
+        'tools.dates.modal.inclusive': '包含所选的起止两天',
+        'tools.dates.modal.note': '工作日：周一至周五，排除西班牙全国法定节假日；不含自治区节日。',
+        'tools.dates.modal.calendar': '自然日',
+        'tools.dates.modal.business': '工作日',
+        'tools.dates.modal.holidays': '全国节假日',
+        'tools.dates.modal.empty': '请选择两个日期进行计算。',
         
         // Footer
         'footer.rights': '© 2026 Xinxin Liu. 保留所有权利。',
